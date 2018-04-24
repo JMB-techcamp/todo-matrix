@@ -15,9 +15,25 @@ header h1 {
   padding: 0 10px;
   margin: 0;
 }
+
 .todo-mat{
   height: 80vh;
 }
+
+.contents{
+  width: 100vW;
+  padding: 10px;
+}
+.contents h1{
+  font-size: 40px;
+}
+.contents h2{
+  font-size: 30px;
+}
+.contents p{
+  font-size: 20px;
+}
+
 footer{
   height: 10vh;
 }

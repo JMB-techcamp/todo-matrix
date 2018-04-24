@@ -1,0 +1,9 @@
+<header>
+  <h1>TODOリスト</h1>
+</header><!-- /header -->
+
+<%  current_user.todos.each do |todos| %>
+  <li style="">
+      <%= todos.title %>
+  </li>
+<% end %>

@@ -7,16 +7,55 @@ body, html {
   height: 100vh;
   width: 100vw;
   background-color: white;
-  margin: 5px;
+  /*margin: 5px;*/
 }
 
-h1 {
-  height: 5%;
-  width: 100%;
-  font-size;
-  color: #4a4a4a;
-  font-family: serif;
-  margin: 0;
+.signin-wrapper{
+  background-color: #3061DD;
+  height: 100vh;
+  width: 100vw;
+}
+
+.contents-header{
+  height: 15%;
   padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contents-header h1 {
+  color: white;
+  font-family: sans-serif;
+  font-size: 50px;
+}
+
+.contents-header h2 {
+  color: white;
+  font-family: serif;
+  font-size: 30px;
+}
+
+.signin-field{
+  /*height:30px;*/
+  border-style: none;
+  opacity: 0.5;
+  /*display: flex;*/
+  /*align-items: center;*/
+  /*justify-content: center;*/
+  margin: 0 auto;
   text-align: center;
+}
+
+.wrapper{
+  width:100%;
+}
+
+input[type="text"]{
+  width:50%;
+  height: 7em;
+  border-style: solid;
+  border-color: #56a764;
+  font-size: large;
+  margin: 5px;
 }

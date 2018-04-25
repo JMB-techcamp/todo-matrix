@@ -1,0 +1,26 @@
+<header>
+  <h1>タスク追加</h1>
+</header><!-- /header -->
+<div class="contents">
+  <%= form_tag('/todos', method: :post) do %>
+    <div>
+      <input placeholder="内容" type="text" name="title">
+    </div>
+    <script type="text/javascript">
+      today=new Date();
+      y=today.getFullYear();
+      m=today.getMonth()+1;
+      d=today.getDate();
+      document.write("<div><input placeholder=\"",y,"年",m,"月",d,"日\" type=\"date\" name=\"title\"></div>");
+    </script>
+    <div>
+      <input placeholder="時間" type="time" name="dead_line">
+    </div>
+    <div>
+      <textarea cols="30" name="detail" placeholder="詳細" rows="10"></textarea>
+    </div>
+    <div>
+      <input type="submit" value="登録">
+    </div>
+  <% end %>
+</div>

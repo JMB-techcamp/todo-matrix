@@ -8,6 +8,7 @@ input[type="text"]{
   width:100%;
   border: 0px;
   background: transparent;
+  font-size: 40px;
 }
 
 input[type="date"]{

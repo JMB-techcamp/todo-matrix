@@ -12,6 +12,7 @@ class TodosController < ApplicationController
     dead_time = Time.parse(todo_params[:dead_time]).strftime("%H:%M:%S")
     dead_line = Time.parse(dead_date +" "+ dead_time).strftime("%F %T")
     Todo.create(title: todo_params[:title], dead_line: dead_line, detail: todo_params[:detail], user_id: current_user.id)
+    redirect_to controller: 'users', action: 'list'
   end
 
   private

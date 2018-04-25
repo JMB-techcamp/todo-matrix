@@ -3,7 +3,7 @@
 </header><!-- /header -->
 
 <%  current_user.todos.each do |todos| %>
-  <li style="">
-      <%= todos.title %>
+  <li>
+      <a href=<%="/todos/#{todos.id}"%> > <%= todos.title %> </a>
   </li>
 <% end %>

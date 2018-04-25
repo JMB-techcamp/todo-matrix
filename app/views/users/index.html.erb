@@ -3,15 +3,21 @@
 <header>
   <h1>MY PAGE</h1>
 </header>
-
-<div class="todo-mat">
-  <p> <%= "User id = #{current_user.id}"%> </p>
-  <div>
-    <%= link_to 'サインアウト', "/users/sign_out", method: :delete %>
+<div class="contents">
+  <div class="todo-mat">
+    <p> <%= "User id = #{current_user.id}"%> </p>
+    <div>
+      <%= link_to 'サインアウト', "/users/sign_out", method: :delete %>
+    </div>
+  <%  current_user.todos.each do |todos| %>
+    <li>
+        <a href=<%="/todos/#{todos.id}"%> > <%= todos.title %> </a>
+    </li>
+  <% end %>
   </div>
 
+  <footer>
+    <a href=<%="/user/#{current_user.id}/list"%>>TODOリスト</a>
+    <a href="/todos/new">タスク登録</a>
+  </footer>
 </div>
-
-<footer>
-
-</footer>

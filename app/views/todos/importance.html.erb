@@ -2,8 +2,38 @@
   <h1>重要度を選択してください。</h1>
 </header><!-- /header -->
 
-<%  current_user.todos.each do |todos| %>
-  <li>
-      <a href=<%="/todos/#{todos.id}"%> > <%= todos.title %> </a>
-  </li>
-<% end %>
+<table>
+  <thead>
+    <tr>
+      <th>タスク</th>
+      <th>期限</th>
+    </tr>
+  </thead>
+  <tbody id="sortable">
+    <%  current_user.todos.each do |todos| %>
+      <tr id="row_<%= todos.id %>">
+        <td><%= todos.title %></td>
+        <td><%= todos.dead_line %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.js'></script>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.css' />
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js'></script>
+
+<script type="text/javascript">
+$(function() {
+  $("#sortable").sortable({
+     cursor: 'move',
+     start: function(event, ui) {ui.item.css("background-color", "orange");},
+     stop: function(event, ui) {
+       ui.item.css("background-color", "white");
+       jQuery.post('<%=reorder_todos_path%>', $(this).sortable( 'serialize'), null, 'text');
+     }
+  });
+  $("#sortable").disableSelection();
+});
+</script>

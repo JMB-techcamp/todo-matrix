@@ -11,6 +11,11 @@ class TodosController < ApplicationController
   def new
   end
 
+  def reorder
+    params[:row].each_with_index {|row, i| Todo.update(row, {:todo_index => i})}
+    render :text => "OK"
+  end
+
   def importance
     dead_date = Time.parse(todo_params[:dead_date]).strftime("%Y-%m-%d")
     dead_time = Time.parse(todo_params[:dead_time]).strftime("%H:%M:%S")

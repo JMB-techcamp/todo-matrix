@@ -1,0 +1,9 @@
+<header>
+  <h1>重要度を選択してください。</h1>
+</header><!-- /header -->
+
+<%  current_user.todos.each do |todos| %>
+  <li>
+      <a href=<%="/todos/#{todos.id}"%> > <%= todos.title %> </a>
+  </li>
+<% end %>

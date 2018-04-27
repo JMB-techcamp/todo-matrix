@@ -8,11 +8,11 @@ Rails.application.routes.draw do
   get  'todos/new'       => 'todos#new'
   get  'todos/:id'       => 'todos#show'
   post 'todos'           => 'todos#importance'
+
   resources :todos do
     collection do
       post 'reorder'
     end
   end
-  # , :collection => {:reorder => :post}
 
 end

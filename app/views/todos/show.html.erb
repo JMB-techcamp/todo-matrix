@@ -1,9 +1,11 @@
 <header>
   <h1>TODO詳細</h1>
+  <a href="/user/<%= current_user.id %>/mypage">マイページ</a>
 </header><!-- /header -->
 
 <div class="contents">
   <h1> <%= @todo.title %> </h1>
   <h2> <%= @todo.dead_line %> </h2>
+  <hr>
   <p> <%= @todo.detail %> </p>
 </div>

@@ -1,5 +1,6 @@
 <header>
   <h1>タスク追加</h1>
+  <a href="/user/<%= current_user.id %>/mypage">マイページ</a>
 </header><!-- /header -->
 <div class="contents">
   <%= form_tag('/todos', method: :post) do %>

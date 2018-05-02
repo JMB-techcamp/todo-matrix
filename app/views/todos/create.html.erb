@@ -1,5 +1,7 @@
+<% todolist = current_user.todos.order('importance ASC')%>
 <header>
   <h1>重要度を選択してください。</h1>
+  <a href="/user/<%= current_user.id %>/mypage">決定</a>
 </header><!-- /header -->
 
 <table>
@@ -10,7 +12,7 @@
     </tr>
   </thead>
   <tbody id="sortable">
-    <%  current_user.todos.order('importance ASC').each do |todo| %>
+    <%  todolist.each do |todo| %>
       <tr id="row_<%= todo.id %>">
         <td><%= todo.title %></td>
         <td><%= todo.dead_line %></td>
@@ -18,7 +20,6 @@
     <% end %>
   </tbody>
 </table>
-<a href="/user/<%= current_user.id %>/mypage">決定</a>
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.js'></script>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.css' />

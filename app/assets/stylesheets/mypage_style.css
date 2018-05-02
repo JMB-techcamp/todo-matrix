@@ -8,23 +8,44 @@ header {
   justify-content: center;
   padding:0;
   margin: 0;
+  position: fixed;
+  top:0;
+  left:0;
 }
 
 header h1 {
   color: white;
   font-family: sans-serif;
+  font-weight: bold;
   font-size: 50px;
   margin: 0;
+}
+
+header a{
+  border-style:solid;
+  border-radius:4px;
+  background-color: white;
+  color: #3061DD;
+  font-size: 50px;
+}
+
+li a{
+  border-style:solid;
+  border-radius:4px;
+  background-color: white;
+  color: #3061DD;
+  font-size: 30px;
 }
 
 .todo-mat{
   height: 90vh;
   width: 100vw;
   padding: 10px;
+  margin-top: 10vh;
 }
 
 .todo-mat h1{
-  font-size: 40px;
+  font-size: 30px;
 }
 
 .todo-mat h2{
@@ -44,6 +65,7 @@ header h1 {
   width: 50%;
   height: 100%;
   float: left;
+  overflow: auto;
 }
 /*.contents-left:hover{
   background-color: blue;
@@ -53,6 +75,7 @@ header h1 {
   width: 50%;
   height: 100%;
   float: right;
+  overflow: auto;
 }
 
 /*.contents-right:hover{

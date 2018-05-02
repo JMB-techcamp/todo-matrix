@@ -1,3 +1,7 @@
+.contents{
+  margin-top: 10vh;
+}
+
 input::-webkit-input-placeholder {
   font-size: 40px;
   font-weight: bold;

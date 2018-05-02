@@ -1,0 +1,18 @@
+table {
+    border-top:1px solid #5C443A;
+    border-left:1px solid #5C443A;
+    border-collapse:collapse;
+    background:#ffffff;
+    font-size:30px;
+    margin-top: 10vh;
+}
+
+thead th, tbody th, tbody td {
+    border-right:1px solid #5C443A;
+    border-bottom:1px solid #5C443A;
+    background:#5C443A;
+    color:#ffffff;
+    background-position:left top;
+    padding:3px 10px 3px 10px;
+    text-align:center;
+ }

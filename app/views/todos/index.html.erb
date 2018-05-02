@@ -1,5 +1,6 @@
 <header>
   <h1>TODOリスト</h1>
+  <a href="/user/<%= current_user.id %>/mypage">OK</a>
 </header><!-- /header -->
 
 <!--
@@ -12,20 +13,23 @@
 <table>
   <thead>
     <tr>
+      <th></th>
       <th>タスク</th>
       <th>期限</th>
     </tr>
   </thead>
   <tbody id="sortable">
+    <% i = 0 %>
     <%  @todos.each do |todo| %>
+      <% i += 1 %>
       <tr id="row_<%= todo.id %>">
+        <td><%= i %></td>
         <td><%= todo.title %></td>
         <td><%= todo.dead_line %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-<a href="/user/<%= current_user.id %>/mypage">マイページ</a>
 
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.js'></script>

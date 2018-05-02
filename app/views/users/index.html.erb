@@ -1,7 +1,7 @@
 <!-- "/app/assets/stylesheets/mypage_style.css" -->
-<% todos = current_user.todos %>
-<% todolen = todos.length %>
+<% todolen = @todos.length %>
 <% time_now = Time.now %>
+<% time_limit = time_now + 1.day %>
 <header>
   <h1>MY PAGE （タスク<%= todolen %>件）</h1>
   <a href=<%="/user/#{current_user.id}/todos"%>>TODOリスト</a>
@@ -10,19 +10,21 @@
 <div class="todo-mat">
   <div class="contents-row">
     <div class="contents-left">
-      <%  todos.each do |todo| %>
-        <% if todo.importance <= todolen/2 and todo.dead_line < time_now + 3.day then %>
+      <h1><%= time_limit.strftime('%m月%d日') %>までの重要なタスク</h1>
+      <%  @todos.each do |todo| %>
+        <% if todo.importance <= todolen/2 and todo.dead_line < time_limit then %>
           <li>
-              <a href=<%="/todos/#{todo.id}"%> > <%= todo.importance %> <%= todo.title %> <%= todo.dead_line%></a>
+              <a href=<%="/todos/#{todo.id}"%> > <%= todo.title %> </a>
           </li>
         <% end %>
       <% end %>
     </div>
     <div class="contents-right">
-      <%  todos.each do |todo| %>
-        <% if todo.importance <= todolen/2 and todo.dead_line >= time_now + 3.day then %>
+      <h1><%= time_limit.strftime('%m月%d日') %>より先の重要なタスク</h1>
+      <%  @todos.each do |todo| %>
+        <% if todo.importance <= todolen/2 and todo.dead_line >= time_limit then %>
           <li>
-              <a href=<%="/todos/#{todo.id}"%> > <%= todo.importance %> <%= todo.title %> <%= todo.dead_line%></a>
+              <a href=<%="/todos/#{todo.id}"%> > <%= todo.title %> </a>
           </li>
         <% end %>
       <% end %>
@@ -31,19 +33,21 @@
   <hr>
   <div class="contents-row">
     <div class="contents-left">
-      <%  todos.each do |todo| %>
-        <% if todo.importance > todolen/2 and todo.dead_line < time_now + 3.day then %>
+      <h1><%= time_limit.strftime('%m月%d日') %>までのタスク</h1>
+      <%  @todos.each do |todo| %>
+        <% if todo.importance > todolen/2 and todo.dead_line < time_limit then %>
           <li>
-              <a href=<%="/todos/#{todo.id}"%> > <%= todo.importance %> <%= todo.title %> <%= todo.dead_line%></a>
+              <a href=<%="/todos/#{todo.id}"%> > <%= todo.title %> </a>
           </li>
         <% end %>
       <% end %>
     </div>
     <div class="contents-right">
-      <%  todos.each do |todo| %>
-        <% if todo.importance > todolen/2 and todo.dead_line >= time_now + 3.day then %>
+      <h1><%= time_limit.strftime('%m月%d日') %>より先のタスク</h1>
+      <%  @todos.each do |todo| %>
+        <% if todo.importance > todolen/2 and todo.dead_line >= time_limit then %>
           <li>
-              <a href=<%="/todos/#{todo.id}"%> > <%= todo.importance %> <%= todo.title %> <%= todo.dead_line%></a>
+              <a href=<%="/todos/#{todo.id}"%> > <%= todo.title %> </a>
           </li>
         <% end %>
       <% end %>

@@ -1,0 +1,7 @@
+.contents h1{
+  font-size: 50px;
+}
+
+.contents h2, .contents p{
+  font-size: 40px
+}

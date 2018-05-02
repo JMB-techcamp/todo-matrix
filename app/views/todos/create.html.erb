@@ -10,10 +10,10 @@
     </tr>
   </thead>
   <tbody id="sortable">
-    <%  current_user.todos.each do |todos| %>
-      <tr id="row_<%= todos.id %>">
-        <td><%= todos.title %></td>
-        <td><%= todos.dead_line %></td>
+    <%  current_user.todos.order('importance ASC').each do |todo| %>
+      <tr id="row_<%= todo.id %>">
+        <td><%= todo.title %></td>
+        <td><%= todo.dead_line %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,7 +32,7 @@ $(function() {
      start: function(event, ui) {ui.item.css("background-color", "orange");},
      stop: function(event, ui) {
        ui.item.css("background-color", "white");
-       jQuery.post('<%=reorder_todos_path%>', $(this).sortable('serialize'), null, 'text');
+       jQuery.post('<%=importance_todos_path%>', $(this).sortable('serialize'), null, 'text');
      }
   });
   $("#sortable").disableSelection();

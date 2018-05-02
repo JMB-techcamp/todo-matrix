@@ -7,10 +7,11 @@ Rails.application.routes.draw do
   get  'user/:id/todos'  => 'todos#index'
   get  'todos/new'       => 'todos#new'
   get  'todos/:id'       => 'todos#show'
-  post 'todos'           => 'todos#importance'
+  post 'todos'           => 'todos#create'
 
   resources :todos do
     collection do
+      post 'importance'
       post 'reorder'
     end
   end

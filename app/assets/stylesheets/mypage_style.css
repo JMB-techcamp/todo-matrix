@@ -6,34 +6,71 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding:0;
+  margin: 0;
 }
 
 header h1 {
   color: white;
   font-family: sans-serif;
   font-size: 50px;
-  padding: 0 10px;
   margin: 0;
 }
 
 .todo-mat{
-  height: 80vh;
-}
-
-.contents{
-  width: 100vW;
+  height: 90vh;
+  width: 100vw;
   padding: 10px;
 }
-.contents h1{
+
+.todo-mat h1{
   font-size: 40px;
 }
-.contents h2{
+
+.todo-mat h2{
   font-size: 30px;
 }
-.contents p{
+
+.todo-mat p{
   font-size: 20px;
 }
 
-footer{
-  height: 10vh;
+.contents-row {
+  width: 100%;
+  height: 50%;
 }
+
+.contents-left {
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+/*.contents-left:hover{
+  background-color: blue;
+}*/
+
+.contents-right {
+  width: 50%;
+  height: 100%;
+  float: right;
+}
+
+/*.contents-right:hover{
+  background-color: blue;
+}
+*/
+/*hr {
+  height: 1px;
+  border: none;
+  border-top: 1px #000000 solid;
+}
+*/
+hr {
+  border: 0;
+  height: 1px;
+  background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+}
+

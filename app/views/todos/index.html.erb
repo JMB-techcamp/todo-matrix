@@ -1,15 +1,7 @@
 <header>
   <h1>TODOリスト</h1>
   <a href="/user/<%= current_user.id %>/mypage">OK</a>
-</header><!-- /header -->
-
-<!--
-<%  @todos.each do |todos| %>
-  <li>
-      <a href=<%="/todos/#{todos.id}"%> > <%= todos.title %> </a>
-  </li>
-<% end %> -->
-
+</header>
 <table>
   <thead>
     <tr>
@@ -41,7 +33,8 @@
 $(function() {
   $("#sortable").sortable({
      cursor: 'move',
-     start: function(event, ui) {ui.item.css("background-color", "orange");},
+     start: function(event, ui) {ui.item.css({'background-color':'orange', 'font-size':'30px'});},
+     // start: function(event, ui) {ui.item.addClass('td');},
      stop: function(event, ui) {
        ui.item.css("background-color", "white");
        jQuery.post('<%=reorder_todos_path%>', $(this).sortable('serialize'), null, 'text');

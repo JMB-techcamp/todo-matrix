@@ -2,6 +2,7 @@
 <% todolen = @todos.length %>
 <% time_now = Time.now %>
 <% time_limit = time_now + 1.day %>
+<% max_todo_length = 15%>
 <header>
   <h1>MY PAGE （タスク<%= todolen %>件）</h1>
   <a href=<%="/user/#{current_user.id}/todos"%>>TODOリスト</a>
@@ -14,7 +15,7 @@
       <%  @todos.each do |todo| %>
         <% if todo.importance <= todolen/2 and todo.dead_line < time_limit then %>
           <li>
-              <a href=<%="/todos/#{todo.id}"%> > <%= todo.title %> </a>
+              <a href=<%="/todos/#{todo.id}"%> > <%= truncate(todo.title, length: max_todo_length) %></a>
           </li>
         <% end %>
       <% end %>
@@ -24,7 +25,7 @@
       <%  @todos.each do |todo| %>
         <% if todo.importance <= todolen/2 and todo.dead_line >= time_limit then %>
           <li>
-              <a href=<%="/todos/#{todo.id}"%> > <%= todo.title %> </a>
+              <a href=<%="/todos/#{todo.id}"%> > <%= truncate(todo.title, length: max_todo_length) %></a>
           </li>
         <% end %>
       <% end %>
@@ -37,7 +38,7 @@
       <%  @todos.each do |todo| %>
         <% if todo.importance > todolen/2 and todo.dead_line < time_limit then %>
           <li>
-              <a href=<%="/todos/#{todo.id}"%> > <%= todo.title %> </a>
+              <a href=<%="/todos/#{todo.id}"%> > <%= truncate(todo.title, length: max_todo_length) %></a>
           </li>
         <% end %>
       <% end %>
@@ -47,7 +48,7 @@
       <%  @todos.each do |todo| %>
         <% if todo.importance > todolen/2 and todo.dead_line >= time_limit then %>
           <li>
-              <a href=<%="/todos/#{todo.id}"%> > <%= todo.title %> </a>
+              <a href=<%="/todos/#{todo.id}"%> > <%= truncate(todo.title, length: max_todo_length) %></a>
           </li>
         <% end %>
       <% end %>

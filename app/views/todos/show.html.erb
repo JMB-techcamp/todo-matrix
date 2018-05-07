@@ -1,6 +1,7 @@
 <header>
   <h1>TODO詳細</h1>
   <a href="/user/<%= current_user.id %>/mypage">マイページ</a>
+  <%= link_to '削除', "/todos/#{@todo.id}", method: :delete %>
 </header><!-- /header -->
 
 <div class="contents">

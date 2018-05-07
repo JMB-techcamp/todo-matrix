@@ -3,7 +3,7 @@ table {
     border-top:1px solid var(--base_color);
     border-left:1px solid var(--base_color);
     border-collapse:collapse;
-    background:#ffffff;
+    /*background:#ffffff;*/
     margin-top: 10vh;
 }
 
@@ -11,7 +11,7 @@ th {
     font-size:30px;
     border-right:1px solid var(--base_color);
     border-bottom:1px solid var(--base_color);
-    background: #3061DD;
+    background: var(--base_background);
     color: white;
     background-position:left top;
     padding:3px 10px 3px 10px;
@@ -22,7 +22,7 @@ td {
     font-size:30px;
     border-right:1px solid var(--base_color);
     border-bottom:1px solid var(--base_color);
-    background: white;
+    /*background: white;*/
     color:black;
     background-position:left top;
     padding:3px 10px 3px 10px;

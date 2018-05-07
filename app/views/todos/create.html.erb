@@ -30,9 +30,9 @@
 $(function() {
   $("#sortable").sortable({
      cursor: 'move',
-     start: function(event, ui) {ui.item.css("background-color", "orange");},
+     start: function(event, ui) {ui.item.css({'background-color':'rgba(255,0,0,0.1)', 'font-size':'30px'});},
      stop: function(event, ui) {
-       ui.item.css("background-color", "white");
+       ui.item.css({'background-color':'rgba(255,0,0,0.1)', 'font-size':'30px'});
        jQuery.post('<%=importance_todos_path%>', $(this).sortable('serialize'), null, 'text');
      }
   });

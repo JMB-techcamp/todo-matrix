@@ -33,10 +33,10 @@
 $(function() {
   $("#sortable").sortable({
      cursor: 'move',
-     start: function(event, ui) {ui.item.css({'background-color':'orange', 'font-size':'30px'});},
+     start: function(event, ui) {ui.item.css({'background-color':'rgba(255,0,0,0.1)', 'font-size':'30px'});},
      // start: function(event, ui) {ui.item.addClass('td');},
      stop: function(event, ui) {
-       ui.item.css("background-color", "white");
+       ui.item.css("background-color", "rgba(255,0,0,0.1)");
        jQuery.post('<%=reorder_todos_path%>', $(this).sortable('serialize'), null, 'text');
      }
   });

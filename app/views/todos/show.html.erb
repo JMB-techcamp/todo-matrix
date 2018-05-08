@@ -1,12 +1,35 @@
 <header>
-  <h1>TODO詳細</h1>
-  <a href="/user/<%= current_user.id %>/mypage">マイページ</a>
-  <%= link_to '削除', "/todos/#{@todo.id}", method: :delete %>
+  <div class="detail-icon"><a href="javascript:history.back()" class="btn"><i class="fas fa-arrow-left fa-5x"></i></a></div>
+  <div class="detail-title"><h1>TODO詳細</h1></div>
+  <div class="icon"><%= link_to "/todos/#{@todo.id}", method: :delete, :class => 'btn' do %><i class="far fa-check-circle fa-5x"></i><% end %></div>
+  <div class="icon"><%= link_to "/todos/#{@todo.id}", method: :delete, :class => 'btn' do %><i class="far fa-trash-alt fa-5x"></i><% end %></div>
 </header><!-- /header -->
 
 <div class="contents">
-  <h1> <%= @todo.title %> </h1>
-  <h2> <%= @todo.dead_line %> </h2>
+  <div class="input-form">
+    <div class="input-form-left">
+      <h1>内容</h1>
+    </div>
+    <div class="input-form-right">
+      <h1><%= @todo.title %> </h1>
+    </div>
+  </div>
   <hr>
-  <p> <%= @todo.detail %> </p>
+  <div class="input-form">
+    <div class="input-form-left">
+      <h1>期限</h1>
+    </div>
+    <div class="input-form-right">
+      <h1><%= @todo.dead_line.strftime("%Y年%m月%d日 %H時%M分") %> </h1>
+    </div>
+  </div>
+  <hr>
+  <div class="input-form">
+    <div class="input-form-left">
+      <h1>詳細</h1>
+    </div>
+    <div class="input-form-right">
+      <h1><%= @todo.detail %> </h1>
+    </div>
+  </div>
 </div>

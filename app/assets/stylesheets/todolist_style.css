@@ -1,30 +1,46 @@
 table {
-    width:90%;
-    border-top:1px solid var(--base_color);
-    border-left:1px solid var(--base_color);
-    border-collapse:collapse;
+    width:80%;
+    /*border-top:1px solid var(--base_color);*/
+    /*border-left:1px solid var(--base_color);*/
+    /*border-collapse:separate;*/
+    border-style: none;
     /*background:#ffffff;*/
-    margin-top: 10vh;
+    /*margin-top: 10vh;*/
 }
 
 th {
-    font-size:30px;
-    border-right:1px solid var(--base_color);
-    border-bottom:1px solid var(--base_color);
-    background: var(--base_background);
-    color: white;
+    font-size:50px;
+    /*border-right:1px solid var(--base_color);*/
+    /*border-bottom:1px solid var(--base_color);*/
+    border-style: none;
+    /*background: var(--base_background);*/
+    color: black;
     background-position:left top;
     padding:3px 10px 3px 10px;
     text-align:center;
  }
 
 td {
+    height:5vh;
     font-size:30px;
-    border-right:1px solid var(--base_color);
+    /*border-right:1px solid var(--base_color);*/
     border-bottom:1px solid var(--base_color);
-    /*background: white;*/
+    /*border-style: none;*/
     color:black;
     background-position:left top;
     padding:3px 10px 3px 10px;
     text-align:center;
  }
+
+ td a{
+    color: var(--base_color);
+    text-decoration: none;
+ }
+
+.todo-table{
+    height: 89vh;
+    width:100vw;
+    margin:11vh 1vh 2vh;
+    position: fixed;
+    overflow: auto;
+}

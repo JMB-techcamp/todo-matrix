@@ -4,29 +4,34 @@
 <% time_limit = time_now + 1.day %>
 <% max_todo_length = 15%>
 <header>
-  <h1>MY PAGE （タスク<%= todolen %>件）</h1>
-  <a href=<%="/user/#{current_user.id}/todos"%>>TODOリスト</a>
-  <a href="/todos/new">タスク登録</a>
+  <div class="title"><h1>MY PAGE</h1></div>
+  <div class="icon"><a href=<%="/user/#{current_user.id}/todos"%> class="btn"> <i class="far fa-file-alt fa-5x"></i></a></div>
+  <div class="icon"><a href="/todos/new" class="btn"><i class="fas fa-plus fa-5x"></i></a></div>
 </header>
 <div class="todo-mat">
   <div class="contents-row">
     <div class="contents-left">
       <h1><%= time_limit.strftime('%m月%d日') %>までの重要なタスク</h1>
-      <%  @todos.each do |todo| %>
-        <% if todo.importance <= todolen/2 and todo.dead_line < time_limit then %>
+      <%  @todos.each_with_index do |todo, i| %>
+        <% if i <= @todos.length/2 and todo.dead_line <= time_limit then %>
           <li>
-              <a href=<%="/todos/#{todo.id}"%> > <%= truncate(todo.title, length: max_todo_length) %></a>
+            <div class="important"><i class="fas fa-exclamation fa-2x faa-wrench animated"></i></div>
+            <div class="urgent"><i class="far fa-clock fa-2x faa-horizontal animated"></i></div>
+            <a href=<%="/todos/#{todo.id}"%> > <%= truncate(todo.title, length: max_todo_length) %></a>
           </li>
+          <hr>
         <% end %>
       <% end %>
     </div>
     <div class="contents-right">
       <h1><%= time_limit.strftime('%m月%d日') %>より先の重要なタスク</h1>
-      <%  @todos.each do |todo| %>
-        <% if todo.importance <= todolen/2 and todo.dead_line >= time_limit then %>
+      <%  @todos.each_with_index do |todo, i| %>
+        <% if i <= @todos.length/2 and todo.dead_line > time_limit then %>
           <li>
-              <a href=<%="/todos/#{todo.id}"%> > <%= truncate(todo.title, length: max_todo_length) %></a>
+            <div class="important"><i class="fas fa-exclamation fa-2x faa-wrench animated"></i></div>
+            <a href=<%="/todos/#{todo.id}"%> > <%= truncate(todo.title, length: max_todo_length) %></a>
           </li>
+          <hr>
         <% end %>
       <% end %>
     </div>
@@ -35,21 +40,24 @@
   <div class="contents-row">
     <div class="contents-left">
       <h1><%= time_limit.strftime('%m月%d日') %>までのタスク</h1>
-      <%  @todos.each do |todo| %>
-        <% if todo.importance > todolen/2 and todo.dead_line < time_limit then %>
+      <%  @todos.each_with_index do |todo, i| %>
+        <% if i > @todos.length/2 and todo.dead_line <= time_limit then %>
           <li>
-              <a href=<%="/todos/#{todo.id}"%> > <%= truncate(todo.title, length: max_todo_length) %></a>
+            <div class="urgent"><i class="far fa-clock fa-2x faa-horizontal animated"></i></div>
+            <a href=<%="/todos/#{todo.id}"%> > <%= truncate(todo.title, length: max_todo_length) %></a>
           </li>
+          <hr>
         <% end %>
       <% end %>
     </div>
     <div class="contents-right">
       <h1><%= time_limit.strftime('%m月%d日') %>より先のタスク</h1>
-      <%  @todos.each do |todo| %>
-        <% if todo.importance > todolen/2 and todo.dead_line >= time_limit then %>
+      <%  @todos.each_with_index do |todo, i| %>
+        <% if i > @todos.length/2 and todo.dead_line > time_limit then %>
           <li>
               <a href=<%="/todos/#{todo.id}"%> > <%= truncate(todo.title, length: max_todo_length) %></a>
           </li>
+          <hr>
         <% end %>
       <% end %>
     </div>

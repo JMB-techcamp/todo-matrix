@@ -26,12 +26,8 @@
 }
 
 .signin-field{
-  /*height:30px;*/
   border-style: none;
   opacity: 0.5;
-  /*display: flex;*/
-  /*align-items: center;*/
-  /*justify-content: center;*/
   margin: 0 auto;
   text-align: center;
 }

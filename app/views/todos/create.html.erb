@@ -1,25 +1,27 @@
 <% todolist = current_user.todos.order('importance ASC')%>
 <header>
-  <h1>重要度を選択してください。</h1>
-  <a href="/user/<%= current_user.id %>/mypage">決定</a>
+  <div class="title"><h1>重要度を選択してください。</h1></div>
+  <div class="icon"><a href="/user/<%= current_user.id %>/mypage" class="btn"><i class="far fa-check-circle fa-5x"></i></a></div>
 </header><!-- /header -->
 
-<table>
-  <thead>
-    <tr>
-      <th>タスク</th>
-      <th>期限</th>
-    </tr>
-  </thead>
-  <tbody id="sortable">
-    <%  todolist.each do |todo| %>
-      <tr id="row_<%= todo.id %>">
-        <td><%= todo.title %></td>
-        <td><%= todo.dead_line %></td>
+<div class="todo-table">
+  <table>
+    <thead>
+      <tr>
+        <th>タスク</th>
+        <th>期限</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody id="sortable">
+      <%  todolist.each do |todo| %>
+        <tr id="row_<%= todo.id %>">
+          <td><%= todo.title %></td>
+          <td><%= todo.dead_line %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<div class="todo-table">
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.js'></script>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.css' />

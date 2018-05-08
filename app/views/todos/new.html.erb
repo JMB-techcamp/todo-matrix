@@ -1,23 +1,50 @@
 <header>
-  <h1>タスク追加</h1>
-  <a href="/user/<%= current_user.id %>/mypage">マイページ</a>
+  <div class="title"><h1>タスク追加</h1></div>
+  <div class="icon"><a href="/user/<%= current_user.id %>/mypage" class="btn"><i class="fas fa-home fa-5x"></i></a></div>
 </header><!-- /header -->
 <div class="contents">
-  <%= form_tag('/todos', method: :post) do %>
-    <div>
-      <input placeholder="内容" type="text" name="title", style="font-size:40px;">
+  <%= form_tag('/todos', method: :post) do |f|%>
+    <div class="input-form">
+      <div class="input-form-left">
+        <h1>内容</h1>
+      </div>
+      <div class="input-form-right">
+        <input type="textarea" name="title">
+      </div>
     </div>
-    <div>
-      <input placeholder="日付" type="date" name="dead_date">
+    <hr>
+    <div class="input-form">
+      <div class="input-form-left">
+        <h1>日付</h1>
+      </div>
+      <div class="input-form-right">
+        <input type="date" name="dead_date" style="font-size:40px;">
+      </div>
     </div>
-    <div>
-      <input placeholder="時間" type="time" name="dead_time">
+    <hr>
+    <div class="input-form">
+      <div class="input-form-left">
+        <h1>時間</h1>
+      </div>
+      <div class="input-form-right">
+        <input type="time" name="dead_time" style="font-size:40px;">
+      </div>
     </div>
-    <div>
-      <textarea cols="30" name="detail" placeholder="詳細" rows="10"></textarea>
+    <hr>
+    <div class="input-form">
+      <div class="input-form-left">
+        <h1>詳細</h1>
+      </div>
+      <div class="input-form-right">
+        <input type="textarea" name="detail" style="font-size:40px;">
+      </div>
     </div>
-    <div>
-      <input type="submit" value="登録">
+    <div class="input-form">
+      <!-- <input type="submit" value="登録"> -->
+      <%= button_tag :type => "submit", :class =>"btn btn-default btn-s-md" do %>
+        <i class="far fa-check-circle fa-5x"></i>
+      <% end %>
+      <!-- <i class="far fa-check-circle fa-5x"></i> -->
     </div>
   <% end %>
 </div>

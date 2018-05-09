@@ -1,7 +1,4 @@
 <% todolist = current_user.todos.order('importance ASC')%>
-<% todolist.each do |todo| %>
-  <% todo.update({:importance => todo.importance + 1}) %>
-<% end %>
 <header>
   <div class="title"><h1>重要度を選択してください。</h1></div>
   <div class="icon"><a href="/user/<%= current_user.id %>/mypage" class="btn"><i class="far fa-check-circle fa-5x"></i></a></div>
@@ -17,7 +14,7 @@
     </thead>
     <tbody id="sortable">
       <%  todolist.each do |todo| %>
-        <% if todo.id == @new_todo_id %>
+        <% if todo.id == @todo.id %>
           <tr id="row_<%= todo.id %>" >
             <td class="newtodo"><%= todo.title %></td>
             <td class="newtodo"><%= todo.dead_line %></td>

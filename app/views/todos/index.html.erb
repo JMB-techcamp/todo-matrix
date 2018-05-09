@@ -19,7 +19,7 @@
         <tr id="row_<%= todo.id %>">
           <td><%= i %></td>
           <td><a href=<%="/todos/#{todo.id}"%>><%= todo.title %></a></td>
-          <td><%= todo.dead_line.strftime("%Y年%m月%d日 %H時%M分") %></td>
+          <td><%= todo.dead_line.strftime("%Y/%m/%d %H:%M") %></td>
         </tr>
       <% end %>
     </tbody>

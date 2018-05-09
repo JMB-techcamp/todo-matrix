@@ -37,6 +37,14 @@ td {
     text-decoration: none;
  }
 
+td.newtodo{
+    background-color: rgba(255, 0, 0, 0.1);
+}
+
+td.newicon{
+    border-style: none;
+    background: transparent;
+}
 .todo-table{
     height: 89vh;
     width:100vw;
@@ -44,3 +52,4 @@ td {
     position: fixed;
     overflow: auto;
 }
+

@@ -1,35 +1,44 @@
 <header>
   <div class="detail-icon"><a href="javascript:history.back()" class="btn"><i class="fas fa-arrow-left fa-5x"></i></a></div>
   <div class="detail-title"><h1>TODO詳細</h1></div>
+  <div class="icon"><a href=<%="/todos/#{@todo.id}/edit"%> class="btn"><i class="far fa-edit fa-5x"></i></a></div>
   <div class="icon"><%= link_to "/todos/#{@todo.id}", method: :delete, :class => 'btn' do %><i class="far fa-check-circle fa-5x"></i><% end %></div>
-  <div class="icon"><%= link_to "/todos/#{@todo.id}", method: :delete, :class => 'btn' do %><i class="far fa-trash-alt fa-5x"></i><% end %></div>
 </header><!-- /header -->
 
 <div class="contents">
-  <div class="input-form">
-    <div class="input-form-left">
+  <div class="detail">
+    <div class="detail-left">
       <h1>内容</h1>
     </div>
-    <div class="input-form-right">
-      <h1><%= @todo.title %> </h1>
+    <div class="detail-right">
+      <%= @todo.title %>
     </div>
   </div>
   <hr>
-  <div class="input-form">
-    <div class="input-form-left">
-      <h1>期限</h1>
+  <div class="detail">
+    <div class="detail-left">
+      <h1>日付</h1>
     </div>
-    <div class="input-form-right">
-      <h1><%= @todo.dead_line.strftime("%Y年%m月%d日 %H時%M分") %> </h1>
+    <div class="detail-right">
+      <%= @todo.dead_line.strftime("%Y/%m/%d") %>
     </div>
   </div>
   <hr>
-  <div class="input-form">
-    <div class="input-form-left">
+  <div class="detail">
+    <div class="detail-left">
+      <h1>時間</h1>
+    </div>
+    <div class="detail-right">
+      <%= @todo.dead_line.strftime("%H:%M") %>
+    </div>
+  </div>
+  <hr>
+  <div class="detail">
+    <div class="detail-left">
       <h1>詳細</h1>
     </div>
-    <div class="input-form-right">
-      <h1><%= @todo.detail %> </h1>
+    <div class="detail-right">
+      <%= @todo.detail %>
     </div>
   </div>
 </div>

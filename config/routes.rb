@@ -7,13 +7,15 @@ Rails.application.routes.draw do
   get    'user/:id/todos'  =>  'todos#index'
   get    'todos/new'       =>  'todos#new'
   get    'todos/:id'       =>  'todos#show'
+  patch  'todos/:id'       =>  'todos#update'
   post   'todos'           =>  'todos#create'
   delete 'todos/:id'       =>  'todos#destroy'
 
   resources :todos do
     collection do
-      post 'importance'
-      post 'reorder'
+      post  'importance'
+      patch 'importance'
+      post  'reorder'
     end
   end
 

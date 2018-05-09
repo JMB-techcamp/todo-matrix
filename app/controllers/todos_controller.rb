@@ -23,6 +23,20 @@ class TodosController < ApplicationController
     dead_time = Time.parse(todo_params[:dead_time]).strftime("%H:%M:%S")
     dead_line = Time.parse(dead_date +" "+ dead_time).strftime("%F %T")
     Todo.create(title: todo_params[:title], dead_line: dead_line, detail: todo_params[:detail], user_id: current_user.id, importance: 0, todo_index: 0)
+    @new_todo_id = Todo.where(user_id: current_user.id).last.id
+  end
+
+  def edit
+    @todo = Todo.find(params[:id])
+  end
+
+  def update
+    @todo = Todo.find(params[:id])
+    dead_date = Time.parse(todo_params[:dead_date]).strftime("%Y-%m-%d")
+    dead_time = Time.parse(todo_params[:dead_time]).strftime("%H:%M:%S")
+    dead_line = Time.parse(dead_date +" "+ dead_time).strftime("%F %T")
+    @todo.update(title: todo_params[:title], dead_line: dead_line, detail: todo_params[:detail], user_id: current_user.id) if @todo.user_id == current_user.id
+    # @update_todo_id = params[:id]
   end
 
   def reorder

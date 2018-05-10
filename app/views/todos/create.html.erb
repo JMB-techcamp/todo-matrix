@@ -4,7 +4,7 @@
 <% end %>
 <header>
   <div class="title"><h1>重要度を選択してください。</h1></div>
-  <div class="icon"><a href="/user/<%= current_user.id %>/mypage" class="btn"><i class="far fa-check-circle fa-5x"></i></a></div>
+  <div class="icon" color="red"><a href="/user/<%= current_user.id %>/mypage" class="btn"><i class="far fa-check-circle fa-5x"></i></a><span>決定</span></div>
 </header><!-- /header -->
 
 <div class="todo-table">
@@ -20,13 +20,13 @@
         <% if todo.id == @new_todo_id %>
           <tr id="row_<%= todo.id %>" >
             <td class="newtodo"><%= todo.title %></td>
-            <td class="newtodo"><%= todo.dead_line %></td>
+            <td class="newtodo"><%= todo.dead_line.strftime("%Y/%m/%d %H:%M") %></td>
             <!-- <td class="newicon"><i class="fas fa-arrows-alt-v fa-2x"></i></td> -->
           </tr>
         <% else %>
           <tr id="row_<%= todo.id %>">
             <td><%= todo.title %></td>
-            <td><%= todo.dead_line %></td>
+            <td><%= todo.dead_line.strftime("%Y/%m/%d %H:%M") %></td>
           </tr>
         <% end %>
       <% end %>

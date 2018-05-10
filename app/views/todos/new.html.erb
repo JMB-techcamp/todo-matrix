@@ -1,9 +1,9 @@
 <header>
   <div class="title"><h1>TODO追加</h1></div>
-  <div class="icon"><a href="/user/<%= current_user.id %>/mypage" class="btn"><i class="fas fa-home fa-5x"></i></a></div>
+  <div class="icon"><a href="/user/<%= current_user.id %>/mypage" class="btn"><i class="fas fa-home fa-5x"></i></a><span>ホーム</span></div>
 </header><!-- /header -->
 <div class="contents">
-  <%= form_tag('/todos', method: :post) do |f|%>
+  <%= form_tag('/todos', method: :post) do %>
     <div class="input-form">
       <div class="input-form-left">
         <h1>内容</h1>

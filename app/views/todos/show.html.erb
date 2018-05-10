@@ -1,8 +1,8 @@
 <header>
-  <div class="detail-icon"><a href="javascript:history.back()" class="btn"><i class="fas fa-arrow-left fa-5x"></i></a></div>
-  <div class="detail-title"><h1>TODO詳細</h1></div>
-  <div class="icon"><a href=<%="/todos/#{@todo.id}/edit"%> class="btn"><i class="far fa-edit fa-5x"></i></a></div>
-  <div class="icon"><%= link_to "/todos/#{@todo.id}", method: :delete, :class => 'btn' do %><i class="far fa-check-circle fa-5x"></i><% end %></div>
+  <div class="icon"><a href="javascript:history.back()" class="btn"><i class="fas fa-arrow-left fa-5x"></i></a><span>戻る</span></div>
+  <div class="title"><h1>TODO詳細</h1></div>
+  <div class="icon"><a href=<%="/todos/#{@todo.id}/edit"%> class="btn"><i class="far fa-edit fa-5x"></i></a><span>編集</span></div>
+  <div class="icon"><%= link_to "/todos/#{@todo.id}", method: :delete, :class => 'btn' do %><i class="far fa-check-circle fa-5x"></i><% end %><span>完了</span></div>
 </header><!-- /header -->
 
 <div class="contents">

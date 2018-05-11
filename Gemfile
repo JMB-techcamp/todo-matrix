@@ -52,3 +52,7 @@ gem 'devise'
 gem 'jquery-turbolinks'
 gem 'simple_form'
 gem 'best_in_place'
+
+group :production do
+  gem 'rails_12factor'
+end

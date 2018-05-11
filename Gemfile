@@ -51,7 +51,6 @@ gem 'sprockets', '2.11.0'
 gem 'devise'
 gem 'jquery-turbolinks'
 gem 'simple_form'
-gem 'best_in_place'
 gem 'yui-compressor'
 
 group :production do

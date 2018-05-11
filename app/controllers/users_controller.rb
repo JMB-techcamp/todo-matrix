@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
-  # before_action :authentication
   # before_action :authenticate_user!, only: :new
   def show
     # binding.pry
+    redirect_to new_user_session_path unless user_signed_in?
     @todos = Todo.where(user_id: current_user.id).order('importance ASC')
   end
 

@@ -44,11 +44,14 @@ test:
 #
 # You can use this database configuration with:
 #
-#   production:
-#     url: <%= ENV['DATABASE_URL'] %>
-#
+  production:
+    url: <%= ENV['DATABASE_URL'] %>
+
 production:
   <<: *default
-  database: todo-matrix_production
-  username: todo-matrix
-  password: <%= ENV['TODO-MATRIX_DATABASE_PASSWORD'] %>
+  database: ENV['CLEARDB_DATABASE_URL']
+  username: ENV['CLEARDB_DATABASE_USERNAME']
+  password: ENV['CLEARDB_DATABASE_PASSWORDs']
+  # database: todo-matrix_production
+  # username: todo-matrix
+  # password: <%= ENV['TODO-MATRIX_DATABASE_PASSWORD'] %>

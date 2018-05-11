@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  # before_action :authenticate_user!, only: :new
+  before_action :authenticate_user!
   def show
     # binding.pry
     redirect_to new_user_session_path unless user_signed_in?

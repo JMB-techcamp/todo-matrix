@@ -1,7 +1,7 @@
 <% todolist = current_user.todos.order('importance ASC')%>
 <header>
   <div class="title"><h1>重要度を選択してください。</h1></div>
-  <div class="icon"><a href="/user/<%= current_user.id %>/mypage" class="btn"><i class="far fa-check-circle fa-5x"></i></a><span>決定</span></div>
+  <div class="icon"><a href="/users/<%= current_user.id %>/mypage" class="btn"><i class="far fa-check-circle fa-5x"></i></a><span>決定</span></div>
 </header><!-- /header -->
 
 <div class="todo-table">

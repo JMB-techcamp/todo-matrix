@@ -10,8 +10,11 @@
   --decide_color: #27ae60;
   --delegate_color: #2980b9;
   --delete_color: #2c3e50;
-  --list_background: linear-gradient(#ecf0f1, #ecf0f3);
-  --list_background: linear-gradient(to bottom, #ecf0f1 0%,#ecf0f3 100%) ;
+  /*--list_background: linear-gradient(#ecf0f1, #ecf0f3);*/
+  --list_background: linear-gradient(to bottom, #ecf0f1 0%,#ecf0f3 100%);
+  --list_boxshadow: rgba(0,0,0,0.5) 0 0 3px;
+  --modal_background: linear-gradient(to bottom, #ecf0f1 0%,#ecf0f3 100%);
+  --modal_boxshadow: rgba(44, 62, 80, 0.1) -1px 1px 5px;
 }
 
 *{
@@ -225,7 +228,7 @@ hr {
 /*    background: #668ad8;
     box-shadow: 0px 0px 0px 5px #668ad8;
 */
-  color:white;
+  opacity: 0.7;
 }
 
 i.fa-exclamation{
@@ -246,7 +249,7 @@ i.fa-clock{
   border-width: 5px;
   /*border-color: var(--important_color);*/
   background: var(--list_background);
-  box-shadow: rgba(0,0,0,0.15) 0 0 2px;
+  box-shadow: var(--list_boxshadow);
 }
 
 /*#important h1{
@@ -262,7 +265,7 @@ i.fa-clock{
   /*border-color: var(--decide_color);*/
   background: var(--list_background);
   -webkit-font-smoothing: subpixel-antialiased;
-  box-shadow: rgba(0,0,0,0.15) 0 0 2px;
+  box-shadow: var(--list_boxshadow);
 }
 /*.decide-header{
   position: fixed;
@@ -276,7 +279,7 @@ i.fa-clock{
   border-width: 5px;
   /*border-color: var(--delegate_color);*/
   background: var(--list_background);
-  box-shadow: rgba(0,0,0,0.15) 0 0 2px;
+  box-shadow: var(--list_boxshadow);
 }
 #delete{
   text-shadow: -1px 1px 0 rgba(255,255,255,1);
@@ -286,7 +289,7 @@ i.fa-clock{
   border-width: 5px;
   /*border-color: var(--delete_color);*/
   background: var(--list_background);
-  box-shadow: rgba(0,0,0,0.15) 0 0 2px;
+  box-shadow: var(--list_boxshadow);
 }
 
 /* モーダル コンテンツエリア */
@@ -302,39 +305,25 @@ i.fa-clock{
   /*color: #666666;*/
   text-align: center;
   text-shadow: -1px 1px 0 rgba(255,255,255,1);
-  background: var(--list_background);
+  background: var(--modal_background);
+  /*background: var(--list_background);*/
+  box-shadow: var(--modal_boxshadow);
   /*background-image: url("lined_paper.png");*/
   position:fixed;
   overflow: auto;
   z-index: 2;
 }
-#modal-main1{
-  /*border-color: var(--important_color);*/
-  box-shadow: rgba(0,0,0,0.15) 0 0 2px;
-}
 #modal-main1 h1{
   color: var(--important_color);
   font-size: 50px;
-}
-
-#modal-main2{
-  border-color: var(--decide_color);
 }
 #modal-main2 h1{
   color: var(--decide_color);
   font-size: 50px;
 }
-
-#modal-main3{
-  border-color: var(--delegate_color);
-}
 #modal-main3 h1{
   color: var(--delegate_color);
   font-size: 50px;
-}
-
-#modal-main4{
-  border-color: var(--delete_color);
 }
 #modal-main4 h1{
   color: var(--delete_color);
@@ -356,7 +345,7 @@ i.fa-clock{
   display:none;
   width:100%;
   height:100%;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(44, 62, 80, 0.2);
   position:fixed;
   top:0;
   left:0;

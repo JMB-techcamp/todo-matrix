@@ -1,16 +1,28 @@
-<h2>Forgot your password?</h2>
-
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<!-- "/app/assets/stylesheets/signin_style.css" -->
+<div class="signin-wrapper">
+  <div class="signin-header">
+    <h1>TODO MATRIX</h1>
+    <h2>自動で仕事の優先順位決めてくれるやつ</h2>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
+  <div class="signin-form">
+    <h1>Eメールアドレスを入力してください。</h1>
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <%= devise_error_messages! %>
+      <div class="signin-form-field">
+         <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", required: "required"%>
+      </div>
+      <div class="signin-form-field">
+        <%= button_tag :type => "submit", :class =>"btn btn-default btn-s-md" do %>
+          <i class="far fa-envelope fa-5x"></i>
+          <h2>パスワード再発行メールが送られます。</h2>
+        <% end %>
+      </div>
+    <%end%>
+    <div class="signin-form-footer">
+      <p><a href="/users/sign_in">サインイン</a></p>
+      <p><a href="/users/sign_up">新規登録</a></p>
+    </div>
 
-<%= render "devise/shared/links" %>
+  </div>
+</div>

@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'users#index'
 
-  get  'user/:id/mypage' => 'users#index'
+  # get  'users/:id/mypage' => 'users#index'
+  get  'users/:id/mypage' => 'users#show'
+  get  'users/:id/todos' =>  'users#index'
 
-  get    'user/:id/todos'  =>  'todos#index'
+  # get    'users/:id/todos' =>  'todos#index'
   get    'todos/new'       =>  'todos#new'
   get    'todos/:id'       =>  'todos#show'
   patch  'todos/:id'       =>  'todos#update'
@@ -18,5 +19,6 @@ Rails.application.routes.draw do
       post  'reorder'
     end
   end
+  root 'users#show'
 
 end

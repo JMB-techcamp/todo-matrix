@@ -1,6 +1,6 @@
 <header>
   <div class="title"><h1>TODO追加</h1></div>
-  <div class="icon"><a href="/user/<%= current_user.id %>/mypage" class="btn"><i class="fas fa-home fa-5x"></i></a><span>ホーム</span></div>
+  <div class="icon"><a href="/users/<%= current_user.id %>/mypage" class="btn"><i class="fas fa-home fa-5x"></i></a><span>ホーム</span></div>
 </header><!-- /header -->
 <div class="contents">
   <%= form_tag('/todos', method: :post) do %>
@@ -9,34 +9,34 @@
         <h1>内容</h1>
       </div>
       <div class="input-form-right">
-        <input type="textarea" name="title">
+        <input type="textarea" name="title" style="font-size:40px;" placeholder="内容" required="required">
       </div>
     </div>
-    <hr>
+    <!-- <hr> -->
     <div class="input-form">
       <div class="input-form-left">
         <h1>日付</h1>
       </div>
       <div class="input-form-right">
-        <input type="date" name="dead_date" style="font-size:40px;">
+        <input type="date" name="dead_date" style="font-size:40px;" required="required">
       </div>
     </div>
-    <hr>
+    <!-- <hr> -->
     <div class="input-form">
       <div class="input-form-left">
         <h1>時間</h1>
       </div>
       <div class="input-form-right">
-        <input type="time" name="dead_time" style="font-size:40px;">
+        <input type="time" name="dead_time" style="font-size:40px;" required="required">
       </div>
     </div>
-    <hr>
+    <!-- <hr> -->
     <div class="input-form">
       <div class="input-form-left">
         <h1>詳細</h1>
       </div>
       <div class="input-form-right">
-        <input type="textarea" name="detail" style="font-size:40px;">
+        <input type="textarea" name="detail" style="font-size:40px;" placeholder="任意">
       </div>
     </div>
     <div class="input-form">

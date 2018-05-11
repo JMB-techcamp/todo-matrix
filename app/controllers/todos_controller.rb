@@ -1,12 +1,9 @@
 class TodosController < ApplicationController
   protect_from_forgery except: :reorder
+  # before_action :authentication, except: [:index, :reorder]
 
   def show
     @todo = Todo.find(params[:id])
-  end
-
-  def index
-    @todos = Todo.where(user_id: params[:id]).order('todo_index ASC')
   end
 
   def new
@@ -24,6 +21,8 @@ class TodosController < ApplicationController
     dead_line = Time.parse(dead_date +" "+ dead_time).strftime("%F %T")
     Todo.create(title: todo_params[:title], dead_line: dead_line, detail: todo_params[:detail], user_id: current_user.id, importance: 0, todo_index: 0)
     @new_todo_id = Todo.where(user_id: current_user.id).last.id
+    redirect_to :controller => 'users', :action => 'index', :id => current_user.id if Todo.where(user_id: current_user.id).length == 1
+    # binding.pry
   end
 
   def edit
@@ -53,14 +52,6 @@ class TodosController < ApplicationController
   private
   def todo_params
     params.permit(:title, :dead_date, :dead_time, :detail)
-  end
-
-  def todo_order
-
-  end
-
-  def move_to_index
-    redirect_to action: :index unless user_signed_in?
   end
 
 end

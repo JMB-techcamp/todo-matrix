@@ -5,9 +5,9 @@
 <% max_todo_length = 15%>
 <header>
   <div class="title"><h1>MY PAGE</h1></div>
-  <div class="icon"><a href=<%="/users/#{current_user.id}/todos"%> class="btn"> <i class="far fa-file-alt fa-5x"></i></a><span>TODO</span></div>
+  <div class="icon"><a href=<%="/users/todos"%> class="btn"> <i class="far fa-file-alt fa-5x"></i></a><span>TODO</span></div>
   <div class="icon"><a href="/todos/new" class="btn"><i class="fas fa-plus fa-5x"></i></a><span>追加</span></div>
-  <div class="icon"><a href=<%="/users/#{current_user.id}/todos"%> class="btn"> <i class="fas fa-search fa-5x"></i></a><span>検索</span></div>
+  <div class="icon"><a href=<%="/users/todos"%> class="btn"> <i class="fas fa-search fa-5x"></i></a><span>検索</span></div>
   <div class="icon"><a href="/users/edit" class="btn"><i class="fas fa-cog fa-5x"></i></a><span>設定</span></div>
 </header>
 <div class="todo-mat">
@@ -17,8 +17,6 @@
       <%  @todos.each_with_index do |todo, i| %>
         <% if i <= @todos.length/2 and todo.dead_line <= time_limit then %>
           <li>
-            <!-- <div class="important"><i class="fas fa-exclamation fa-2x"></i></div> -->
-            <!-- <div class="urgent"><i class="far fa-clock fa-2x"></i></div> -->
             <a href=<%="/todos/#{todo.id}"%> > <%= truncate(todo.title, length: max_todo_length) %></a>
           </li>
           <hr>
@@ -30,7 +28,6 @@
       <%  @todos.each_with_index do |todo, i| %>
         <% if i <= @todos.length/2 and todo.dead_line > time_limit then %>
           <li>
-            <!-- <div class="important"><i class="fas fa-exclamation fa-2x"></i></div> -->
             <a href=<%="/todos/#{todo.id}"%> > <%= truncate(todo.title, length: max_todo_length) %></a>
           </li>
           <hr>

@@ -1,7 +1,7 @@
 <header>
   <div class="icon"><a href="javascript:history.back()" class="btn"><i class="fas fa-arrow-left fa-5x"></i></a><span>戻る</span></div>
   <div class="title"><h1>TODO編集</h1></div>
-  <div class="icon"><a href="/users/<%= current_user.id %>/mypage" class="btn"><i class="fas fa-home fa-5x"></i></a><span>ホーム</span></div>
+  <div class="icon"><a href="/users/mypage" class="btn"><i class="fas fa-home fa-5x"></i></a><span>ホーム</span></div>
 </header><!-- /header -->
 <div class="contents">
   <%= form_tag("/todos/#{@todo.id}", method: :patch) do |f|%>

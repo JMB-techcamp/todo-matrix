@@ -20,13 +20,5 @@ class ApplicationController < ActionController::Base
 
   private
   def authentication
-    if not params[:id].nil? then
-      if params[:controller] == "users" then
-        @user = User.find(params[:id])
-      elsif params[:controller] == "todos" then
-        @user = User.find(Todo.find(params[:id]).user_id) unless params[:id].nil?
-      end
-      redirect_to root_path unless @user == authenticate_user!
-    end
   end
 end

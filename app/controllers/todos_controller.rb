@@ -3,7 +3,8 @@ class TodosController < ApplicationController
   # before_action :authentication, except: [:index, :reorder]
 
   def show
-    @todo = Todo.find(params[:id])
+    # binding.pry
+    @todo = Todo.where(user_id: current_user.id).find(params[:id])
   end
 
   def new

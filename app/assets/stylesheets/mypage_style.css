@@ -19,16 +19,16 @@
 }
 */
 
-body , html {
+body{
   /*height: 100vh;*/
-  height: 120vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   background-image: url('retina-dust.png');
   /*background-color: red;*/
 }
 
 header {
-  height: 10vh;
+  height: 20vh;
   width: 100vw;
   background-color: rgba(149, 165, 166, 0.2);
   text-align: left;

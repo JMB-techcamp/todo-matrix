@@ -23,7 +23,7 @@ body{
   /*height: 100vh;*/
   height: 100%;
   width: 100%;
-  background-image: image-url('retina-dust.png');
+  background-image: url('retina-dust.png');
   /*background-color: red;*/
 }
 

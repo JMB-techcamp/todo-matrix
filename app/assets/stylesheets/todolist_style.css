@@ -38,7 +38,7 @@ td.newicon{
 .todo-table{
     height: 89vh;
     width:100vw;
-    margin:11vh 1vh 2vh;
+    margin:16vh 1vh 2vh;
     position: fixed;
     overflow: auto;
 }

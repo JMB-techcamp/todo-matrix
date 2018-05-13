@@ -13,7 +13,7 @@ class TodosController < ApplicationController
   def destroy
     todo = Todo.find(params[:id])
     todo.destroy if todo.user_id == current_user.id
-    redirect_to :controller => 'users', :action => 'index', :id => current_user.id
+    redirect_to :controller => 'users', :action => 'show', :id => current_user.id
   end
 
   def create
@@ -22,7 +22,7 @@ class TodosController < ApplicationController
     dead_line = Time.parse(dead_date +" "+ dead_time).strftime("%F %T")
     Todo.create(title: todo_params[:title], dead_line: dead_line, detail: todo_params[:detail], user_id: current_user.id, importance: 0, todo_index: 0)
     @new_todo_id = Todo.where(user_id: current_user.id).last.id
-    redirect_to :controller => 'users', :action => 'index', :id => current_user.id if Todo.where(user_id: current_user.id).length == 1
+    redirect_to :controller => 'users', :action => 'show', :id => current_user.id if Todo.where(user_id: current_user.id).length == 1
     # binding.pry
   end
 

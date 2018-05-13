@@ -15,7 +15,7 @@ th {
 td {
     height:5vh;
     font-size:30px;
-    border-bottom:1px solid var(--base_color);
+    border-bottom:1px solid #4a2d08;
     color:black;
     background-position:left top;
     padding:3px 10px 3px 10px;
@@ -23,7 +23,7 @@ td {
  }
 
  td a{
-    color: var(--base_color);
+    color: #4a2d08;
     text-decoration: none;
  }
 

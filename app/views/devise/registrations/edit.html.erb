@@ -1,6 +1,6 @@
 <header>
   <div class="title"><h1>設定</h1></div>
-  <div class="icon"><a href="/users/<%= current_user.id %>/mypage" class="btn"><i class="fas fa-home fa-5x"></i></a><span>ホーム</span></div>
+  <div class="icon"><a href="/users/mypage" class="btn"><i class="fas fa-home fa-5x"></i></a><span>ホーム</span></div>
   <div class="icon"><%= link_to "/users/sign_out", method: :delete, :class => 'btn' do %><i class="fas fa-sign-out-alt fa-5x"></i></a><span>サインアウト<span><% end %>
 </header>
 <div class="contents">

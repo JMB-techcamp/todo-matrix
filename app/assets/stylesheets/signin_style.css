@@ -1,6 +1,6 @@
 
 .signin-wrapper{
-  background: var(--base_background);
+  background: rgba(149, 165, 166, 0.2);
   height: 100%;
   width: 100%;
   align-items: center;
@@ -18,14 +18,14 @@
 }
 
 .signin-header h1 {
-  color: var(--main_text_color);
+  color: #c0392b;
   font-family: sans-serif;
   font-size: 50px;
 }
 
 .signin-header h2 {
   color: white;
-  color: var(--main_text_color);
+  color: #c0392b;
   font-size: 30px;
 }
 
@@ -67,7 +67,7 @@
 }
 
 .signin-form-button .btn{
-  background: var(--main_text_color);
+  background: #c0392b;
   border: none;
   color: #fff;
   cursor: pointer;

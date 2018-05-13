@@ -9,7 +9,7 @@
 }
 
 .contents h2, .contents p{
-  font-size: 40px
+  font-size: 40px;
 }
 
 .detail{
@@ -23,9 +23,9 @@
   font-weight: bold;
   text-shadow: -1px 1px 0 rgba(255,255,255,1);
   background: transparent;
-  color: var(--button_color);
+  color: #7f8c8d;
   font-size: 20px;
-  padding-left: 20px
+  padding-left: 20px;
 }
 
 .detail-left{

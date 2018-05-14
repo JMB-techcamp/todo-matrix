@@ -53,13 +53,14 @@ input[type="text"]{
 }
 
 form input{
-  background: transparent;
-  /*border: none;*/
-  border: 2px solid rgba(30, 39, 46,0.2);
+  /*background: transparent;*/
+  background-color: rgba(245, 59, 87,0.1);
+  border: none;
+  /*border: 2px solid rgba(30, 39, 46,0.2);*/
   color: #666;
-  font-family: 'Open Sans', sans-serif;
+  /*font-family: 'Open Sans', sans-serif;*/
   height: 80px;
-  transition: border-color 0.3s;
+  /*transition: border-color 0.1s;*/
   width: 100%;
   font-size: 40px;
 }

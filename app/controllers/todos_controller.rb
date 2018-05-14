@@ -4,7 +4,8 @@ class TodosController < ApplicationController
 
   def show
     # binding.pry
-    @todo = Todo.where(user_id: current_user.id).find(params[:id])
+    @todo = Todo.find(params[:id])
+    redirect_back(fallback_location: root_path) unless @todo.user_id == current_user.id
   end
 
   def new

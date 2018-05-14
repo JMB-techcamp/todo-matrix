@@ -1,7 +1,7 @@
 <header>
   <div class="title"><h1>設定</h1></div>
-  <div class="icon"><a href="/users/mypage" class="btn"><i class="fas fa-home fa-5x"></i></a><div class="icon-text">ホーム</div></div>
-  <div class="icon"><%= link_to "/users/sign_out", method: :delete, :class => 'btn' do %><i class="fas fa-sign-out-alt fa-5x"></i></a><div class="icon-text">サインアウト</div><% end %>
+  <div class="icon"><a href="/users/mypage" class="btn"><i class="fas fa-home fa-5x"></i><div class="icon-text">ホーム</div></a></div>
+  <div class="icon"><%= link_to "/users/sign_out", method: :delete, :class => 'btn' do %><i class="fas fa-sign-out-alt fa-5x"></i><div class="icon-text">サインアウト</div></a><% end %>
 </header>
 <div class="contents">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>

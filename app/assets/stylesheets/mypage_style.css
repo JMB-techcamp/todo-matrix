@@ -74,10 +74,7 @@ header .icon {
   vertical-align: center;
   /*float: left;*/
 }
-header .icon:hover{
-  /*filter: brightness(80%);*/
-  background-color:rgba(30, 39, 46, 0.1);
-}
+
 .icon span {
   font-weight: bold;
   /*text-shadow: -1px 1px 0 rgba(255,255,255,1);*/
@@ -91,7 +88,14 @@ header .icon:hover{
 }
 
 .icon a{
-  background: transparent;
+  text-decoration: none;
+  display: block;
+  height: 100%;
+  width:100%;
+}
+
+.icon a:hover{
+  background-color:rgba(30, 39, 46, 0.1);
 }
 .icon-text{
   font-weight: bold;
@@ -203,10 +207,6 @@ hr {
     overflow: hidden;
 }
 
-.btn i:hover {
-  /*opacity: 0.7;*/
-  /*filter: brightness(80%);*/
-}
 
 #important {
   text-shadow: -1px 1px 0 rgba(255,255,255,1);

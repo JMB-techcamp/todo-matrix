@@ -25,6 +25,7 @@ html{
   width: 100vw;
   /*background-image: url('retina-dust.png');*/
   background-color: rgba(44, 62, 80, 0.1);
+    font-family: 'Roboto', 'Sawarabi Gothic', sans-serif;
 }
 
 header {
@@ -47,7 +48,6 @@ header {
 header h1 {
   /*color: #c0392b;*/
   color: rgba(210, 218, 226,1.0);
-  font-family: sans-serif;
   font-weight: bold;
   font-size: 50px;
   margin: 0;
@@ -114,6 +114,7 @@ li {
   margin: 0 auto;
   text-align: center;
   list-style: none;
+   /*font-family: "Kokoro";*/
 }
 
 li .important i {

@@ -19,10 +19,10 @@
 }
 */
 
-body, html{
+html{
   /*height: 100vh;*/
-  height: 100%;
-  width: 100%;
+  height: 120vh;
+  width: 100vw;
   /*background-image: url('retina-dust.png');*/
   background-color: rgba(44, 62, 80, 0.1);
 }
@@ -40,8 +40,8 @@ header {
   position: fixed;
   top:0;
   left:0;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-  box-shadow: rgba(255,255,255, 1) 0 1px 0;
+  border-bottom: 2px solid rgba(0,0,0, 0.2);
+  box-shadow: rgba(255,255,255, 0.2) 0 2px 0;
 }
 
 header h1 {
@@ -112,9 +112,9 @@ li a {
 
 .todo-mat {
   height: 100vh;
-  width: 95vw;
-  padding: 30px;
-  margin-top: 12vh;
+  width: 100%;
+  /*padding: 30px;*/
+  margin-top: 12.5vh;
   /*position: fixed;*/
 }
 
@@ -133,6 +133,7 @@ li a {
 .contents-row {
   width: 100%;
   height: 50%;
+  padding:20px;
 }
 
 .contents-left {

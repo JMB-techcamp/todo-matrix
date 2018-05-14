@@ -3,29 +3,13 @@
   padding: 0;
 }
 
-/*html {
-  --base_color: #4a2d08;
-  --main_text_color: #c0392b;
-  --base_background: rgba(149, 165, 166, 0.2);
-  --button_color: #7f8c8d;
-  --important_color: #e74c3c;
-  --decide_color: #27ae60;
-  --delegate_color: #2980b9;
-  --delete_color: #2c3e50;
-  --list_background: #ecf0f1;
-  --list_boxshadow: rgba(0, 0, 0, 0.5) 0 0 3px;
-  --modal_background: #ecf0f1;
-  --modal_boxshadow: rgba(44, 62, 80, 0.1) -1px 1px 5px;
-}
-*/
-
 html{
   /*height: 100vh;*/
   height: 120vh;
   width: 100vw;
   /*background-image: url('retina-dust.png');*/
   background-color: rgba(44, 62, 80, 0.1);
-    font-family: 'Roboto', 'Sawarabi Gothic', sans-serif;
+  font-family: 'Roboto', 'Sawarabi Gothic', sans-serif;
 }
 
 header {
@@ -53,7 +37,7 @@ header h1 {
   margin: 0;
   vertical-align: center;
   /*text-shadow: -1px 1px 0 rgba(255,255,255,1);*/
-  text-shadow: 1px -1px 0 rgba(0,0,0,1);
+  /*text-shadow: 1px -1px 0 rgba(0,0,0,1);*/
 }
 
 header .title {

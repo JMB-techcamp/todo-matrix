@@ -85,6 +85,9 @@ header .icon {
   padding-left: 10px;
 }
 
+a:active{
+  text-decoration: none;
+}
 li {
   margin: 0 auto;
   text-align: center;

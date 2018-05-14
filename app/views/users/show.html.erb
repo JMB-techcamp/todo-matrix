@@ -17,7 +17,7 @@
       <%  @todos.each_with_index do |todo, i| %>
         <% if i <= @todos.length/2 and todo.dead_line <= time_limit then %>
           <li>
-            <a href=<%="/todos/#{todo.id}"%> > <%= truncate(todo.title, length: max_todo_length) %></a>
+            <a> <%= truncate(todo.title, length: max_todo_length) %></a>
           </li>
           <hr>
         <% end %>
@@ -28,7 +28,7 @@
       <%  @todos.each_with_index do |todo, i| %>
         <% if i <= @todos.length/2 and todo.dead_line > time_limit then %>
           <li>
-            <a href=<%="/todos/#{todo.id}"%> > <%= truncate(todo.title, length: max_todo_length) %></a>
+            <a > <%= truncate(todo.title, length: max_todo_length) %></a>
           </li>
           <hr>
         <% end %>
@@ -43,7 +43,7 @@
         <% if i > @todos.length/2 and todo.dead_line <= time_limit then %>
           <li>
             <!-- <div class="urgent"><i class="far fa-clock fa-2x"></i></div> -->
-            <a href=<%="/todos/#{todo.id}"%> > <%= truncate(todo.title, length: max_todo_length) %></a>
+            <a> <%= truncate(todo.title, length: max_todo_length) %></a>
           </li>
           <hr>
         <% end %>
@@ -54,7 +54,7 @@
       <%  @todos.each_with_index do |todo, i| %>
         <% if i > @todos.length/2 and todo.dead_line > time_limit then %>
           <li>
-              <a href=<%="/todos/#{todo.id}"%> > <%= truncate(todo.title, length: max_todo_length) %></a>
+              <a> <%= truncate(todo.title, length: max_todo_length) %></a>
           </li>
           <hr>
         <% end %>

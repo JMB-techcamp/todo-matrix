@@ -187,6 +187,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bundler
   byebug
   coffee-rails (~> 4.1.0)
   compass-rails (~> 2.0)

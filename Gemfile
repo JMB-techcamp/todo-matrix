@@ -55,4 +55,5 @@ gem 'yui-compressor'
 
 group :production do
   gem 'rails_12factor'
+  gem 'bundler'
 end

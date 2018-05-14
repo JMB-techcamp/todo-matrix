@@ -89,6 +89,10 @@ header .icon:hover{
   margin: 0 auto;
   /*padding-left: 1vh;*/
 }
+
+.icon a{
+  background: transparent;
+}
 .icon-text{
   font-weight: bold;
   /*text-shadow: -1px 1px 0 rgba(255,255,255,1);*/
@@ -100,6 +104,8 @@ header .icon:hover{
   margin: 0 auto;
   /*padding-left: 1vh;*/
 }
+
+
 li {
   margin: 0 auto;
   text-align: center;

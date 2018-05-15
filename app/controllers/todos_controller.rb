@@ -24,7 +24,6 @@ class TodosController < ApplicationController
     Todo.create(title: todo_params[:title], dead_line: dead_line, detail: todo_params[:detail], user_id: current_user.id, importance: 0, todo_index: 0)
     @new_todo_id = Todo.where(user_id: current_user.id).last.id
     redirect_to :controller => 'users', :action => 'show', :id => current_user.id if Todo.where(user_id: current_user.id).length == 1
-    # binding.pry
   end
 
   def edit
@@ -37,22 +36,39 @@ class TodosController < ApplicationController
     dead_time = Time.parse(todo_params[:dead_time]).strftime("%H:%M:%S")
     dead_line = Time.parse(dead_date +" "+ dead_time).strftime("%F %T")
     @todo.update(title: todo_params[:title], dead_line: dead_line, detail: todo_params[:detail], user_id: current_user.id) if @todo.user_id == current_user.id
-    # @update_todo_id = params[:id]
   end
 
   def reorder
-    puts "todos#reorder"
-    puts "params[:row] =",params[:row]
     params[:row].each_with_index {|row, i| Todo.update(row, {:todo_index => i + 1})}
     render :nothing => true
   end
 
   def importance
-    puts "todos#importance"
-    puts "params[:row] =",params[:row]
     params[:row].each_with_index {|row, i| Todo.update(row, {:importance => i + 1})}
     render :nothing => true
-    # todo_order
+  end
+
+  def auto_order
+    todos = Todo.where(user_id: current_user.id).order('dead_line ASC')
+    todos_slice = todos.each_slice(todos.length/2+1).to_a
+    # binding.pry
+    todos_urgent = todos_slice[0].sort{|a,b| a.importance <=> b.importance}
+    todos_noturgent = todos_slice[1].sort{|a,b| a.importance <=> b.importance}
+
+    todos_slice_urg = todos_urgent.each_slice(todos_urgent.length/2+1).to_a
+    todos_important = todos_slice_urg[0]
+    todos_delegate  = todos_slice_urg[1]
+
+    todos_slice_noturg = todos_noturgent.each_slice(todos_noturgent.length/2+1).to_a
+    todos_decide = todos_slice_noturg[0]
+    todos_delete = todos_slice_noturg[1]
+
+    todo_list = todos_important + todos_decide + todos_delegate + todos_delete
+
+    todo_list.each_with_index do |todo, i|
+      Todo.update(todo.id, {:todo_index => i + 1})
+    end
+    redirect_to :controller => 'users', :action => 'index', :id => current_user.id
   end
 
   private

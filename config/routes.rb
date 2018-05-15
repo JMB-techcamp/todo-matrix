@@ -20,6 +20,7 @@ Rails.application.routes.draw do
       post  'importance'
       patch 'importance'
       post  'reorder'
+      post  'auto_order'
     end
   end
 

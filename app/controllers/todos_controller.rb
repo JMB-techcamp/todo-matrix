@@ -41,11 +41,15 @@ class TodosController < ApplicationController
   end
 
   def reorder
+    puts "todos#reorder"
+    puts "params[:row] =",params[:row]
     params[:row].each_with_index {|row, i| Todo.update(row, {:todo_index => i + 1})}
     render :nothing => true
   end
 
   def importance
+    puts "todos#importance"
+    puts "params[:row] =",params[:row]
     params[:row].each_with_index {|row, i| Todo.update(row, {:importance => i + 1})}
     render :nothing => true
     # todo_order

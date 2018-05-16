@@ -19,12 +19,14 @@
       </div>
       <!-- <hr> -->
         <!-- <div class="signin-form-button"> -->
-      <div class="signin-form-field">
-        <%= button_tag :type => "submit", :class =>"btn" do %>
-          <i class="fas fa-sign-in-alt fa-5x"></i>
-          <h2>サインイン</h2>
-        <% end %>
+    <div class="submit-button">
+      <div class="submit-icon">
+        <i class="fas fa-sign-in-alt fa-5x"></i>
       </div>
+      <div class="submit-text">
+          <input type="submit" value="サインイン">
+      </div>
+    </div>
     <%end%>
     <div class="signin-form-footer">
       <p><a href="/users/sign_up">新規登録</a></p>

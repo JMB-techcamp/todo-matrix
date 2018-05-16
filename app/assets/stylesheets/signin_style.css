@@ -1,12 +1,18 @@
-
+.pattern {
+  background-color: rgba(192, 57, 43, 0.9);
+  background-image: linear-gradient(115deg, transparent 75%, rgba(192, 57, 43, 0.5) 75%), linear-gradient(245deg, transparent 75%, rgba(192, 57, 43, 0.5) 75%), linear-gradient(115deg, transparent 75%, rgba(192, 57, 43, 0.5) 75%), linear-gradient(245deg, transparent 75%, rgba(192, 57, 43, 0.5) 75%);
+  background-position: 0 0, 0 0, 10px -20px, 10px -20px;
+  background-size: 20px 40px;
+}
 .signin-wrapper{
-  background-color: rgba(200, 63, 52,1.0);
+  /*background-color: rgba(200, 63, 52,1.0);*/
+  /*background: linear-gradient(to bottom, rgba(192, 57, 43, 0.9), rgba(192, 57, 43, 0.75));*/
   height: 100vh;
   width: 100%;
   align-items: center;
   text-align: center;
   justify-content: center;
-  padding-top: 2vh;
+  padding-top: 5vh;
   position: fixed;
 }
 

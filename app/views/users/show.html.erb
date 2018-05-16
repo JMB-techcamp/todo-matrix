@@ -10,52 +10,60 @@
 <div class="todo-mat">
   <div class="contents-row">
     <div class="contents-left" id="important">
-      <h1>緊急 ＆ 重要</h1>
+      <div class="contents-head"><h1>緊急 ＆ 重要</h1></div>
+      <div class="contents-list">
       <% if @todos_important.present? then%>
         <%  @todos_important.each do |todo| %>
             <li>
               <a> <%= truncate(todo.title, length: max_todo_length) %></a>
             </li>
-            <hr>
+            <!-- <hr> -->
         <% end %>
       <% end %>
     </div>
+    </div>
     <div class="contents-right" id="decide">
-      <h1>重要 （緊急ではない）</h1>
+      <div class="contents-head"><h1>重要 （緊急ではない）</h1></div>
+      <div class="contents-list">
       <% if @todos_decide.present? then%>
         <%  @todos_decide.each do |todo| %>
             <li>
               <a > <%= truncate(todo.title, length: max_todo_length) %></a>
             </li>
-            <hr>
+            <!-- <hr> -->
         <% end %>
       <% end %>
+    </div>
     </div>
   </div>
   <!-- <hr> -->
   <div class="contents-row">
     <div class="contents-left" id="delegate">
-      <h1>緊急 （重要ではない）</h1>
+      <div class="contents-head"><h1>緊急 （重要ではない）</h1></div>
+      <div class="contents-list">
       <% if @todos_delegate.present? then%>
         <%  @todos_delegate.each do |todo| %>
             <li>
               <!-- <div class="urgent"><i class="far fa-clock fa-2x"></i></div> -->
               <a><%= truncate(todo.title, length: max_todo_length) %></a>
             </li>
-            <hr>
+            <!-- <hr> -->
         <% end %>
       <% end %>
     </div>
+    </div>
     <div class="contents-right" id="delete">
-      <h1>削除</h1>
+      <div class="contents-head"><h1>削除</h1></div>
+      <div class="contents-list">
       <% if @todos_delete.present? then%>
         <%  @todos_delete.each do |todo| %>
             <li>
                 <a><%= truncate(todo.title, length: max_todo_length) %></a>
             </li>
-            <hr>
+            <!-- <hr> -->
         <% end %>
       <% end %>
+    </div>
     </div>
   </div>
 </div>
@@ -68,7 +76,7 @@
         <li>
           <a href=<%="/todos/#{todo.id}"%>><%= todo.title%></a>
         </li>
-        <hr>
+        <!-- <hr> -->
     <% end %>
   <% end %>
 </div>
@@ -80,7 +88,7 @@
         <li>
           <a href=<%="/todos/#{todo.id}"%>><%= todo.title%></a>
         </li>
-        <hr>
+        <!-- <hr> -->
     <% end %>
   <% end %>
 </div>
@@ -93,7 +101,7 @@
           <!-- <div class="urgent"><i class="far fa-clock fa-2x"></i></div> -->
           <a href=<%="/todos/#{todo.id}"%>><%= todo.title%></a>
         </li>
-        <hr>
+        <!-- <hr> -->
     <% end %>
   <% end %>
 </div>
@@ -105,7 +113,7 @@
         <li>
             <a href=<%="/todos/#{todo.id}"%>><%= todo.title%></a>
         </li>
-        <hr>
+        <!-- <hr> -->
     <% end %>
   <% end %>
 </div>

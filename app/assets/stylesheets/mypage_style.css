@@ -26,7 +26,7 @@ header {
   top:0;
   left:0;
   border-bottom: 2px solid rgba(0,0,0, 0.2);
-  box-shadow: rgba(0,0,0, 1.0) 0 0 10px 5px;
+  box-shadow:0px 12px 10px -10px black;
   z-index: 1;
 }
 
@@ -164,12 +164,7 @@ li a {
 }
 
 .todo-mat h1{
-  font-size: 40px;
-  /*position:fixed;*/
-  /*left:auto;*/
-  /*top:0;*/
-  /*margin:0 0 0 100px;*/
-  /*margin-bottom: 10px;*/
+  font-size: 50px;
 }
 
 .todo-mat h2 {
@@ -185,13 +180,11 @@ li a {
 }
 
 .contents-head{
-  /*width:40%;*/
   height: 8%;
   margin: 0 auto;
   color: white;
-  /*background-color: yellow;*/
-  /*position: sti;*/
-  /*margin-left: 30px;*/
+  border-width: 5px;
+  box-shadow:0px 12px 10px -10px black;
 }
 
 .contents-list{
@@ -256,11 +249,12 @@ hr {
   text-shadow: -1px 1px 0 rgba(255,255,255,1);
   color: rgba(255, 63, 52, 1.0);
 }
+
 #important .contents-head{
-  border-width: 5px;
   background-color: rgba(255, 63, 52, 1.0);
-  box-shadow:0px 15px 10px -10px black;
+  border: solid 1px rgba(255, 63, 52, 1.0);
 }
+
 #important li{
   border-left: solid 30px rgba(255, 63, 52, 1.0);
 }
@@ -279,9 +273,7 @@ hr {
   /*border-radius: 6px;*/
 }
 #decide .contents-head{
-  border-width: 5px;
   background-color: rgba(5, 196, 107, 1.0);
-  box-shadow:0px 15px 10px -10px black;
 }
 #decide li{
     border-left: solid 30px rgba(5, 196, 107, 1.0);
@@ -300,10 +292,9 @@ hr {
   color: rgba(60, 64, 198, 1.0);
 }
 #delegate .contents-head{
-  border-width: 5px;
   background-color: rgba(60, 64, 198, 1.0);
-  box-shadow:0px 15px 10px -10px black;
 }
+
 #delegate li{
     border-left: solid 30px rgba(60, 64, 198, 1.0);
 }
@@ -322,9 +313,7 @@ hr {
 }
 
 #delete .contents-head{
-  border-width: 5px;
   background-color: rgba(30, 39, 46, 1.0);
-  box-shadow:0px 15px 10px -10px black;
 }
 
 #delete li{

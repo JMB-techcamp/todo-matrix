@@ -143,6 +143,9 @@ li:after{
   transform: rotate(8deg);
 }
 
+.modal li{
+  height: 120px;
+}
 .modal li:after{
   z-index: -1;
   position: absolute;

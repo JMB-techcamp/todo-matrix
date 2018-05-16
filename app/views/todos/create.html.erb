@@ -19,14 +19,14 @@
       <%  todolist.each do |todo| %>
         <% if todo.id == @new_todo_id %>
           <tr id="row_<%= todo.id %>" >
-            <td class="newtodo"><%= todo.title %></td>
-            <td class="newtodo"><%= todo.dead_line.strftime("%Y/%m/%d %H:%M") %></td>
+            <td class="newtodo title"><%= todo.title %></td>
+            <td class="newtodo date"><%= todo.dead_line.strftime("%Y/%m/%d %H:%M") %></td>
             <!-- <td class="newicon"><i class="fas fa-arrows-alt-v fa-2x"></i></td> -->
           </tr>
         <% else %>
           <tr id="row_<%= todo.id %>">
-            <td><%= todo.title %></td>
-            <td><%= todo.dead_line.strftime("%Y/%m/%d %H:%M") %></td>
+            <td class="title"><%= todo.title %></td>
+            <td class="date"><%= todo.dead_line.strftime("%Y/%m/%d %H:%M") %></td>
           </tr>
         <% end %>
       <% end %>

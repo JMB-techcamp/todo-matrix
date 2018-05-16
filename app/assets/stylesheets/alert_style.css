@@ -9,9 +9,9 @@
   background-color: rgba(231, 76, 60, 0.1);
   margin: 3em auto;
   padding: 2vh;
+  color: red;
 }
 
 .alert-form p{
-  color: red;
   font-size: 30px;
 }

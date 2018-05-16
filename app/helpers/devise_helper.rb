@@ -6,7 +6,8 @@ module DeviseHelper
     messages = resource.errors.full_messages.each do |msg|
       html += <<-EOF
         <div class="alert-form" role="alert">
-          <p>#{msg}</p>
+        <i class="fas fa-exclamation-triangle"></i>
+        <p>#{msg}</p>
         </div>
       EOF
     end

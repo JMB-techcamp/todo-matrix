@@ -180,7 +180,7 @@ li a {
 }
 
 .contents-head{
-  height: 8%;
+  height: 10%;
   margin: 0 auto;
   color: white;
   border-width: 5px;
@@ -189,7 +189,7 @@ li a {
 
 .contents-list{
   overflow: auto;
-  height:90%;
+  height:88%;
   margin:5px 0;
   /*position: relative;*/
 }

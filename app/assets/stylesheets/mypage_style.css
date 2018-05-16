@@ -116,7 +116,9 @@ li {
   height: 70px;
    /*font-family: "Kokoro";*/
 }
-
+.modal li {
+height:auto;
+}
 li .important i {
   width:10%;
   color:red;

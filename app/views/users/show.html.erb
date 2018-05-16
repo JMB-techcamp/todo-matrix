@@ -66,7 +66,7 @@
   <% if @todos_important.present? then%>
     <%  @todos_important.each do |todo| %>
         <li>
-          <a href=<%="/todos/#{todo.id}"%>><%= truncate(todo.title, length: max_todo_length)%></a>
+          <a href=<%="/todos/#{todo.id}"%>><%= todo.title%></a>
         </li>
         <hr>
     <% end %>
@@ -78,7 +78,7 @@
   <% if @todos_decide.present? then%>
     <%  @todos_decide.each do |todo| %>
         <li>
-          <a href=<%="/todos/#{todo.id}"%>><%= truncate(todo.title, length: max_todo_length)%></a>
+          <a href=<%="/todos/#{todo.id}"%>><%= todo.title%></a>
         </li>
         <hr>
     <% end %>
@@ -91,7 +91,7 @@
     <%  @todos_delegate.each do |todo| %>
         <li>
           <!-- <div class="urgent"><i class="far fa-clock fa-2x"></i></div> -->
-          <a href=<%="/todos/#{todo.id}"%>><%= truncate(todo.title, length: max_todo_length)%></a>
+          <a href=<%="/todos/#{todo.id}"%>><%= todo.title%></a>
         </li>
         <hr>
     <% end %>
@@ -103,7 +103,7 @@
   <% if @todos_delete.present? then%>
     <%  @todos_delete.each do |todo| %>
         <li>
-            <a href=<%="/todos/#{todo.id}"%>><%= truncate(todo.title, length: max_todo_length) %></a>
+            <a href=<%="/todos/#{todo.id}"%>><%= todo.title%></a>
         </li>
         <hr>
     <% end %>

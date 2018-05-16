@@ -1,28 +1,51 @@
 table {
     width:80%;
+    /*border-style: none;*/
+    margin-left: 5vw;
     border-style: none;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: -1px 1px 0 rgba(255,255,255,1);
+    border-collapse: separate;
+    border-spacing: 0 20px;
+    /*border-top: solid 1px #666;*/
+    /*border-bottom: solid 1px #666;*/
 }
 
 th {
     font-size:50px;
-    border-style: none;
     color: black;
-    background-position:left top;
-    padding:3px 10px 3px 10px;
+    /*background-position:left top;*/
     text-align:center;
+    vertical-align: middle;
  }
 
-td {
-    height:5vh;
-    font-size:30px;
-    border-bottom:1px solid #4a2d08;
+tbody tr{
+    background-color: rgba(44, 62, 80, 0.1);
+}
+
+tbody td {
+    line-height: 50px;
+    font-size: 40px;
     color:black;
-    background-position:left top;
-    padding:3px 10px 3px 10px;
+    /*background-position:left top;*/
+    padding: 30px;
     text-align:center;
  }
 
- td a{
+td.number{
+/*border-right: solid 5px rgba(211, 84, 0,1.0);*/
+    background-color: rgba(211, 84, 0,1.0);
+    color:white;
+    font-size: 50px;
+    text-shadow: 1px -1px 0 rgba(0,0,0,1);
+}
+
+td.title{
+    border-right: dotted 5px rgba(44, 62, 80,1.0);
+}
+
+td a{
     color: #4a2d08;
     text-decoration: none;
  }
@@ -36,10 +59,14 @@ td.newicon{
     background: transparent;
 }
 .todo-table{
-    height: 89vh;
+    height: auto;
     width:100vw;
-    margin: 12vh 1vh 2vh;
-    position: fixed;
+    margin-top: 13vh;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    text-align: center;
+    /*position: fixed;*/
     overflow: auto;
 }
 

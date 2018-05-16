@@ -18,9 +18,9 @@
       <%  @todos.each do |todo| %>
         <% i += 1 %>
         <tr id="row_<%= todo.id %>">
-          <td><%= i %></td>
-          <td><a href=<%="/todos/#{todo.id}"%>><%= todo.title %></a></td>
-          <td><%= todo.dead_line.strftime("%Y/%m/%d %H:%M") %></td>
+          <td class="number"><%= i %></td>
+          <td class="title"><a href=<%="/todos/#{todo.id}"%>><%= todo.title %></a></td>
+          <td class="date"><%= todo.dead_line.strftime("%Y/%m/%d %H:%M") %></td>
         </tr>
       <% end %>
     </tbody>

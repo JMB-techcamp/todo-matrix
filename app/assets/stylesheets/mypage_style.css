@@ -92,6 +92,7 @@ header .icon {
 .icon a:hover{
   background-color:rgba(30, 39, 46, 0.1);
 }
+
 .icon-text{
   font-weight: bold;
   /*text-shadow: -1px 1px 0 rgba(255,255,255,1);*/
@@ -104,12 +105,15 @@ header .icon {
   line-height:3vh;
   /*padding-left: 1vh;*/
 }
-
+#settings a{
+  pointer-events: none;
+}
 
 li {
   margin: 0 auto;
   text-align: center;
   list-style: none;
+  height: 70px;
    /*font-family: "Kokoro";*/
 }
 
@@ -130,6 +134,7 @@ li a {
   color: #4a2d08;
   text-decoration:none;
   font-weight: bold;
+  font-size: 40px;
 }
 
 .todo-mat {
@@ -145,7 +150,7 @@ li a {
 }
 
 .todo-mat a {
-  font-size: 30px;
+  /*font-size: 40px;*/
 }
 
 .todo-mat li {

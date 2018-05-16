@@ -1,8 +1,41 @@
-<h2>Change your password</h2>
+<header>
+  <div class="title"><h1>パスワード変更</h1></div>
+  <div class="icon"><a href="/users/mypage" class="btn"><i class="fas fa-home fa-5x"></i><div class="icon-text">ホーム</div></a></div>
+</header>
 
+<div class="contents">
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
   <%= f.hidden_field :reset_password_token %>
+    <div class="edit-form">
+      <h1>パスワードを変更する</h1>
+      <%= f.password_field :password, autocomplete: "off" %>
+      <% if @minimum_password_length %>
+        <br />
+          <em>(<%= @minimum_password_length %> 文字以上)</em>
+      <% end %>
+    </div>
+    <!-- <hr> -->
+    <div class="edit-form">
+      <!-- <div class="input-form-left"> -->
+        <!-- <h1>パスワード変更（確認）</h1> -->
+      <!-- </div> -->
+      <!-- <div class="input-form-right"> -->
+        <!-- <input type="textarea" name="password"> -->
+        <h1>パスワード変更（確認）</h1>
+        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      <!-- </div> -->
+    </div>
+        <div class="edit-form">
+      <!-- <div class="input-form-left"> -->
+        <!-- <h1>現在のパスワード</h1> -->
+      <!-- </div> -->
+      <!-- <div class="input-form-right"> -->
+        <h1>現在のパスワード</h1>
+        <%= f.password_field :current_password, autocomplete: "off" , require: "true"%>
+      <!-- </div> -->
+    </div>
+</div>
 
   <div class="field">
     <%= f.label :password, "New password" %><br />

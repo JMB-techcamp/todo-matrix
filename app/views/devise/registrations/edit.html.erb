@@ -1,61 +1,55 @@
 <header>
-  <div class="title"><h1>設定</h1></div>
+  <div class="title"><h1>ユーザー情報の編集</h1></div>
   <div class="icon"><a href="/users/mypage" class="btn"><i class="fas fa-home fa-5x"></i><div class="icon-text">ホーム</div></a></div>
 </header>
 <div class="contents">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
     <div class="edit-form">
-      <h1>Eメールを変更する</h1>
+      <h1>メールアドレスの変更</h1>
       <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
       <% end %>
     </div>
     <!-- <hr> -->
+    <hr>
     <div class="edit-form">
-      <h1>パスワードを変更する</h1>
-      <%= f.password_field :password, autocomplete: "off" %>
-      <% if @minimum_password_length %>
-        <br />
-          <em>(<%= @minimum_password_length %> 文字以上)</em>
-      <% end %>
+      <h1>新しいパスワード</h1>
+      <%= f.password_field :password, autocomplete: "off", placeholder: @minimum_password_length.to_s + "文字以上" %>
     </div>
-    <!-- <hr> -->
-    <div class="edit-form">
+
+     <div class="edit-form">
       <!-- <div class="input-form-left"> -->
         <!-- <h1>パスワード変更（確認）</h1> -->
       <!-- </div> -->
       <!-- <div class="input-form-right"> -->
         <!-- <input type="textarea" name="password"> -->
-        <h1>パスワード変更（確認）</h1>
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        <h1>新しいパスワード（確認）</h1>
+        <%= f.password_field :password_confirmation, autocomplete: "off"%>
       <!-- </div> -->
     </div>
-    <!-- <hr> -->
+    <hr>
     <div class="edit-form">
       <!-- <div class="input-form-left"> -->
         <!-- <h1>現在のパスワード</h1> -->
       <!-- </div> -->
       <!-- <div class="input-form-right"> -->
-        <h1>現在のパスワード</h1>
+        <h1>現在のパスワード（必須）</h1>
         <%= f.password_field :current_password, autocomplete: "off" , require: "true"%>
       <!-- </div> -->
     </div>
     <!-- <hr> -->
-  <div class="input-form">
-      <%= button_tag :type => "submit", :class =>"btn btn-default btn-s-md" do %>
-        <i class="far fa-check-circle fa-5x"></i>
-      <% end %>
-  </div>
+    <div class="submit-button">
+      <div class="submit-icon">
+        <i class="fas fa-sign-in-alt fa-5x"></i>
+      </div>
+      <div class="submit-text">
+          <input type="submit" value="変更">
+      </div>
+    </div>
 <!-- <h3>Cancel my account</h3> -->
 
 <!-- <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p> -->
 <% end %>
-
-<div class="input-form">
-  <%= link_to "/users/sign_out", method: :delete, :class => 'btn' do %>
-    <i class="fas fa-sign-out-alt fa-5x"></i><div class="icon-text">サインアウト</div>
-  <% end %>
-</div>
 </div>

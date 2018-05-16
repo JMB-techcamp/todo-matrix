@@ -5,7 +5,7 @@
   <div class="icon"><a href="/users/todos" class="btn"> <i class="far fa-file-alt fa-5x"></i><div class="icon-text">TODO</div></a></div>
   <div class="icon"><a href="/todos/new" class="btn"><i class="fas fa-plus fa-5x"></i><div class="icon-text">追加</div></a></div>
   <div class="icon"><a href="/users/todos" class="btn"> <i class="fas fa-search fa-5x"></i><div class="icon-text">検索</div></a></div>
-  <div class="icon"><a href="/users/edit" class="btn"><i class="fas fa-cog fa-5x"></i><div class="icon-text">設定</div></a></div>
+  <div class="icon"  id="settings"><a href="" class="btn"><i class="fas fa-cog fa-5x"></i><div class="icon-text">設定</div></a></div>
 </header>
 <div class="todo-mat">
   <div class="contents-row">
@@ -108,4 +108,9 @@
         <hr>
     <% end %>
   <% end %>
+</div>
+
+<div id="modal-setting" class="modal">
+  <li><a href="<%= edit_user_registration_path %>">ユーザー情報の編集</a></li>
+  <li><%= link_to "/users/sign_out", method: :delete do %>サインアウト<% end %></li>
 </div>

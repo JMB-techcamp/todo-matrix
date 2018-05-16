@@ -52,6 +52,7 @@ gem 'devise'
 gem 'jquery-turbolinks'
 gem 'simple_form'
 gem 'yui-compressor'
+gem 'jquery-ui-rails'
 
 group :production do
   gem 'rails_12factor'

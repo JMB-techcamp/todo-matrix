@@ -51,7 +51,7 @@ class TodosController < ApplicationController
   def auto_order
     todos = Todo.where(user_id: current_user.id).order('dead_line ASC')
     todos_slice = todos.each_slice(todos.length/2+1).to_a
-    # binding.pry
+
     todos_urgent = todos_slice[0].sort{|a,b| a.importance <=> b.importance}
     todos_noturgent = todos_slice[1].sort{|a,b| a.importance <=> b.importance}
 

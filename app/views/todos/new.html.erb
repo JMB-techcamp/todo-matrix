@@ -3,7 +3,7 @@
   <div class="icon"><a href="/users/mypage" class="btn"><i class="fas fa-home fa-5x"></i><div class="icon-text">ホーム</div></a></div>
 </header><!-- /header -->
 <div class="contents">
-  <%= form_tag('/todos', method: :post) do %>
+  <%= form_tag('/todos', method: :post) do%>
     <div class="input-form">
       <div class="input-form-left">
         <h1>内容</h1>
@@ -39,15 +39,20 @@
         <input type="textarea" name="detail" style="font-size:40px;" placeholder="任意">
       </div>
     </div>
+    <!-- tag field -->
+    <div class="article-tags-field">
+      <ul id="article-tags">
+      </ul>
+    </div>
+
+    <!-- submit button -->
     <div class="submit-button">
-      <!-- <input type="submit" value="登録"> -->
       <div class="submit-icon">
         <i class="far fa-check-circle fa-5x"></i>
       </div>
       <div class="submit-text">
           <input type="submit" value="登録">
       </div>
-      <!-- <i class="far fa-check-circle fa-5x"></i> -->
     </div>
   <% end %>
 </div>

@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180424021136) do
+ActiveRecord::Schema.define(version: 20180515052820) do
+
+  create_table "tags", force: :cascade do |t|
+    t.string   "tag",        limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "todo_tags", force: :cascade do |t|
+    t.integer  "todo_id",    limit: 4
+    t.integer  "tag_id",     limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "todos", force: :cascade do |t|
     t.string   "title",      limit: 255

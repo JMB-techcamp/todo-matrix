@@ -11,20 +11,24 @@
   <div class="contents-row">
     <div class="contents-left" id="important">
       <h1>緊急 ＆ 重要</h1>
-      <%  @todos_important.each do |todo| %>
-          <li>
-            <a> <%= truncate(todo.title, length: max_todo_length) %></a>
-          </li>
-          <hr>
+      <% if @todos_important.present? then%>
+        <%  @todos_important.each do |todo| %>
+            <li>
+              <a> <%= truncate(todo.title, length: max_todo_length) %></a>
+            </li>
+            <hr>
+        <% end %>
       <% end %>
     </div>
     <div class="contents-right" id="decide">
       <h1>重要 （緊急ではない）</h1>
-      <%  @todos_decide.each do |todo| %>
-          <li>
-            <a > <%= truncate(todo.title, length: max_todo_length) %></a>
-          </li>
-          <hr>
+      <% if @todos_decide.present? then%>
+        <%  @todos_decide.each do |todo| %>
+            <li>
+              <a > <%= truncate(todo.title, length: max_todo_length) %></a>
+            </li>
+            <hr>
+        <% end %>
       <% end %>
     </div>
   </div>
@@ -32,21 +36,25 @@
   <div class="contents-row">
     <div class="contents-left" id="delegate">
       <h1>緊急 （重要ではない）</h1>
-      <%  @todos_delegate.each do |todo| %>
-          <li>
-            <!-- <div class="urgent"><i class="far fa-clock fa-2x"></i></div> -->
-            <a><%= truncate(todo.title, length: max_todo_length) %></a>
-          </li>
-          <hr>
+      <% if @todos_delegate.present? then%>
+        <%  @todos_delegate.each do |todo| %>
+            <li>
+              <!-- <div class="urgent"><i class="far fa-clock fa-2x"></i></div> -->
+              <a><%= truncate(todo.title, length: max_todo_length) %></a>
+            </li>
+            <hr>
+        <% end %>
       <% end %>
     </div>
     <div class="contents-right" id="delete">
       <h1>削除</h1>
-      <%  @todos_delete.each do |todo| %>
-          <li>
-              <a><%= truncate(todo.title, length: max_todo_length) %></a>
-          </li>
-          <hr>
+      <% if @todos_delete.present? then%>
+        <%  @todos_delete.each do |todo| %>
+            <li>
+                <a><%= truncate(todo.title, length: max_todo_length) %></a>
+            </li>
+            <hr>
+        <% end %>
       <% end %>
     </div>
   </div>
@@ -55,41 +63,49 @@
 <!-- モーダルウインドウ -->
 <div id="modal-main1" class="modal">
   <h1>すぐに片付けよう！</h1>
-  <%  @todos_important.each do |todo| %>
-      <li>
-        <a href=<%="/todos/#{todo.id}"%>><%= truncate(todo.title, length: max_todo_length)%></a>
-      </li>
-      <hr>
+  <% if @todos_important.present? then%>
+    <%  @todos_important.each do |todo| %>
+        <li>
+          <a href=<%="/todos/#{todo.id}"%>><%= truncate(todo.title, length: max_todo_length)%></a>
+        </li>
+        <hr>
+    <% end %>
   <% end %>
 </div>
 
 <div id="modal-main2" class="modal">
   <h1>時間を確保してやろう！</h1>
-  <%  @todos_decide.each do |todo| %>
-      <li>
-        <a href=<%="/todos/#{todo.id}"%>><%= truncate(todo.title, length: max_todo_length)%></a>
-      </li>
-      <hr>
+  <% if @todos_decide.present? then%>
+    <%  @todos_decide.each do |todo| %>
+        <li>
+          <a href=<%="/todos/#{todo.id}"%>><%= truncate(todo.title, length: max_todo_length)%></a>
+        </li>
+        <hr>
+    <% end %>
   <% end %>
 </div>
 
 <div id="modal-main3" class="modal">
   <h1>なるべく人に任せてみよう！</h1>
-  <%  @todos_delegate.each do |todo| %>
-      <li>
-        <!-- <div class="urgent"><i class="far fa-clock fa-2x"></i></div> -->
-        <a href=<%="/todos/#{todo.id}"%>><%= truncate(todo.title, length: max_todo_length)%></a>
-      </li>
-      <hr>
+  <% if @todos_delegate.present? then%>
+    <%  @todos_delegate.each do |todo| %>
+        <li>
+          <!-- <div class="urgent"><i class="far fa-clock fa-2x"></i></div> -->
+          <a href=<%="/todos/#{todo.id}"%>><%= truncate(todo.title, length: max_todo_length)%></a>
+        </li>
+        <hr>
+    <% end %>
   <% end %>
 </div>
 
 <div id="modal-main4" class="modal">
   <h1>これは後回しにしよう！</h1>
-  <%  @todos_delete.each do |todo| %>
-      <li>
-          <a href=<%="/todos/#{todo.id}"%>><%= truncate(todo.title, length: max_todo_length) %></a>
-      </li>
-      <hr>
+  <% if @todos_delete.present? then%>
+    <%  @todos_delete.each do |todo| %>
+        <li>
+            <a href=<%="/todos/#{todo.id}"%>><%= truncate(todo.title, length: max_todo_length) %></a>
+        </li>
+        <hr>
+    <% end %>
   <% end %>
 </div>

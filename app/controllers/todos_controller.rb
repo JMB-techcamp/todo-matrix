@@ -50,6 +50,12 @@ class TodosController < ApplicationController
 
   def auto_order
     todos = Todo.where(user_id: current_user.id).order('dead_line ASC')
+    todo_list = []
+    todos_important = []
+    todos_decide = []
+    todos_delete = []
+    todos_delegate = []
+
   if todos.present? and todos.length >= 2 then
     todos_slice = todos.each_slice(todos.length/2).to_a if todos.length % 2 == 0
     todos_slice = todos.each_slice(todos.length/2+1).to_a if todos.length % 2 == 1
@@ -59,13 +65,13 @@ class TodosController < ApplicationController
 
     todos_slice_urg = todos_urgent.each_slice(todos_urgent.length/2).to_a if todos_urgent.length % 2 == 0
     todos_slice_urg = todos_urgent.each_slice(todos_urgent.length/2+1).to_a if todos_urgent.length % 2 == 1
-    @todos_important = todos_slice_urg[0]
-    @todos_delegate  = todos_slice_urg[1]
+    todos_important = todos_slice_urg[0] if todos_slice_urg[0].present?
+    todos_delegate  = todos_slice_urg[1] if todos_slice_urg[1].present?
 
     todos_slice_noturg = todos_noturgent.each_slice(todos_noturgent.length/2).to_a if todos_noturgent.length % 2 == 0
     todos_slice_noturg = todos_noturgent.each_slice(todos_noturgent.length/2+1).to_a if todos_noturgent.length % 2 == 1
-    @todos_decide = todos_slice_noturg[0]
-    @todos_delete = todos_slice_noturg[1]
+    todos_decide = todos_slice_noturg[0] if todos_slice_noturg[0].present?
+    todos_delete = todos_slice_noturg[1] if todos_slice_noturg[1].present?
 
     todo_list = todos_important + todos_decide + todos_delegate + todos_delete
 

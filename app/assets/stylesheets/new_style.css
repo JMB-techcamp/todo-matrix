@@ -11,12 +11,13 @@
 
 .submit-button{
   height: 8vh;
-  width:80%;
+  width: 80%;
   margin: 0 auto;
   background-color: rgba(200, 63, 52,1.0);
   border-radius: 6px;
   color: rgba(210, 218, 226, 1.0);
   text-shadow: 1px -1px 0 rgba(0,0,0,1);
+  box-shadow: 0px 0px 30px -5px white inset;
 }
 
 .submit-icon{
@@ -25,7 +26,6 @@
   width: 6vh;
   margin-left: 3vh;
   float:left;
-
 }
 
 .submit-icon i{
@@ -82,6 +82,8 @@ form input{
   /*background: transparent;*/
   background-color: rgba(245, 59, 87,0.1);
   border: none;
+  border-radius: 10px;
+  box-shadow: 0px 0px 30px -10px black inset;
   /*border: 2px solid rgba(30, 39, 46,0.2);*/
   color: #666;
   /*font-family: 'Open Sans', sans-serif;*/
@@ -89,6 +91,7 @@ form input{
   /*transition: border-color 0.1s;*/
   width: 100%;
   font-size: 50px;
+  padding-left: 10px;
 }
 
 form input:focus {
@@ -103,11 +106,7 @@ input[type="date"]{
 
 input[type="time"]{
   width:80%;
-  /*border: 0px;*/
-  /*font-size: 50px;*/
   font-weight: bold;
-  /*background: transparent;*/
-  /*color: gray;*/
 }
 
 input[type="textarea"]{
@@ -123,4 +122,6 @@ input[type="submit"]{
   color: rgba(210, 218, 226, 1.0);
   font-size: 50px;
   font-weight: bold;
+  box-shadow: none;
+  text-shadow: 1px -1px 0 rgba(0,0,0,1);
 }

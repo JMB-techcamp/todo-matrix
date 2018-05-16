@@ -209,7 +209,10 @@ li a {
   border-width: 5px;
   box-shadow:0px 12px 10px -10px black;
 }
-
+.contents-head{
+  color: #ecf0f1;
+  text-shadow: 1px -1px 0 rgba(0,0,0,1);
+}
 .contents-list{
   overflow: auto;
   height:88%;

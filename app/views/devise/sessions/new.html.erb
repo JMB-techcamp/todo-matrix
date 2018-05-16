@@ -7,7 +7,7 @@
   </div>
 
   <div class="signin-form">
-    <h1>サインイン</h1>
+    <h1>Sign-in</h1>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'signin-field'}) do |f| %>
       <div class="signin-form-field">
          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", required: "required"%>
@@ -24,13 +24,12 @@
         <i class="fas fa-sign-in-alt fa-5x"></i>
       </div>
       <div class="submit-text">
-          <input type="submit" value="サインイン">
+          <input type="submit" value="Sign-in">
       </div>
     </div>
     <%end%>
     <div class="signin-form-footer">
       <p><a href="/users/sign_up">新規登録</a></p>
-      <p><a href="/users/password/new">パスワードを忘れた場合</a></p>
     </div>
   </div>
 </div>

@@ -7,14 +7,12 @@
   text-align: center;
   justify-content: center;
   padding-top: 2vh;
+  position: fixed;
 }
 
 .signin-header{
   height: 20vh;
-  padding: 0;
-  /*align-items: center;*/
-  /*text-align: center;*/
-  /*justify-content: center;*/
+  padding-top: 5vh;
 }
 
 .top-icon{
@@ -93,16 +91,17 @@
   width: 100%;
 }
 
+.signin-form-footer{
+  margin-top: 50px;
+}
 .signin-form-footer a {
   color: #8c8c8c;
   text-decoration: none;
   transition: border-color 0.3s;
-  font-size: 30px;
+  /*margin-top: 40px;*/
+  font-size: 40px;
 }
 
 .signin-form-footer a:hover{
   border-bottom: 1px dotted #8c8c8c;
-}
-.wrapper{
-  width:100%;
 }

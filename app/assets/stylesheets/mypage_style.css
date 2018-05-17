@@ -206,8 +206,8 @@ li a {
   height: 10%;
   margin: 0 auto;
   color: white;
-  border-width: 5px;
-  box-shadow:0px 10.5px 10px -10px black;
+  /*border-width: 5px;*/
+  /*box-shadow:0px 10.5px 10px -10px black;*/
 }
 .contents-head{
   color: #ecf0f1;
@@ -270,6 +270,7 @@ hr {
   border-left: solid 5px rgba(255, 63, 52, 1.0);
   border-right: solid 5px rgba(255, 63, 52, 1.0);
   /*box-shadow: rgba(0, 0, 0, 0.5) 0 0 5px 2px;*/
+  background-color: rgba(255, 63, 52, 0.1);
 }
 #important .contents-list{
   text-shadow: -1px 1px 0 rgba(255,255,255,1);
@@ -291,6 +292,7 @@ hr {
   border-bottom: solid 5px rgba(5, 196, 107, 1.0);
   border-left: solid 5px rgba(5, 196, 107, 1.0);
   border-right: solid 5px rgba(5, 196, 107, 1.0);
+  background-color: rgba(5, 196, 107, 0.1);
 }
 
 #decide .contents-list{
@@ -312,6 +314,7 @@ hr {
   border-left: solid 5px rgba(60, 64, 198, 1.0);
   border-right: solid 5px rgba(60, 64, 198, 1.0);
   /*background: rgba(60, 64, 198, 0.2);*/
+  background-color: rgba(60, 64, 198, 0.1);
 }
 #delegate .contents-list{
   text-shadow: -1px 1px 0 rgba(255,255,255,1);
@@ -331,6 +334,7 @@ hr {
   border-bottom: solid 5px rgba(30, 39, 46, 1.0);
   border-left: solid 5px rgba(30, 39, 46, 1.0);
   border-right: solid 5px rgba(30, 39, 46, 1.0);
+  background-color: rgba(30, 39, 46, 0.1);
 }
 
 #delete .contents-list{

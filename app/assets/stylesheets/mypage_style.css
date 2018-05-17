@@ -133,9 +133,9 @@ li:after{
   top: 80%;
   max-width:300px;
   background: black;
-  -webkit-box-shadow: 0 15px 20px 1px black;
-  -moz-box-shadow: 0 15px 20px 1px black;
-  box-shadow: 0 15px 20px 1px black;
+  -webkit-box-shadow: 0 15px 25px 2px black;
+  -moz-box-shadow: 0 15px 25px 2px black;
+  box-shadow: 0 15px 25px 2px black;
   -webkit-transform: rotate(8deg);
   -moz-transform: rotate(8deg);
   -o-transform: rotate(8deg);
@@ -166,10 +166,6 @@ li:after{
   -ms-transform: rotate(3deg);
   transform: rotate(3deg);
 }
-/*.modal li {
-height:auto;
-}
-*/
 
 li a {
   border-style:none;
@@ -206,9 +202,8 @@ li a {
   height: 10%;
   margin: 0 auto;
   color: white;
-  /*border-width: 5px;*/
-  /*box-shadow:0px 10.5px 10px -10px black;*/
 }
+
 .contents-head{
   color: #ecf0f1;
   text-shadow: 1px -1px 0 rgba(0,0,0,1);
@@ -217,8 +212,8 @@ li a {
   overflow: auto;
   height:88%;
   margin:5px 0;
-  /*position: relative;*/
 }
+
 .contents-row {
   width: 95%;
   height: 50%;
@@ -231,15 +226,12 @@ li a {
   float: left;
   text-align: center;
   overflow: auto;
-  /*justify-content: center;*/
 }
 
 .contents-right {
   width: 48%;
   height: 95%;
   float: right;
-  /*position:relative;*/
-  /*overflow: auto;*/
   text-align: center;
 }
 

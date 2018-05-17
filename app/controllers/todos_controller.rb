@@ -1,11 +1,12 @@
 class TodosController < ApplicationController
   protect_from_forgery except: :reorder
+  rescue_from ActionController::RedirectBackError, with: :redirect_to_default
   # before_action :authentication, except: [:index, :reorder]
 
   def show
     # binding.pry
     @todo = Todo.find(params[:id])
-    redirect_back(fallback_location: root_path) unless @todo.user_id == current_user.id
+    redirect_to :back unless @todo.user_id == current_user.id
   end
 
   def new
@@ -14,7 +15,14 @@ class TodosController < ApplicationController
   def destroy
     todo = Todo.find(params[:id])
     todo.destroy if todo.user_id == current_user.id
-    redirect_to :controller => 'users', :action => 'show', :id => current_user.id
+    # binding.pry
+    if params[:flag].to_i == 0 then
+      redirect_to :controller => 'users', :action => 'show', :id => current_user.id
+    elsif params[:flag].to_i == 1 then
+      redirect_to :controller => 'users', :action => 'index', :id => current_user.id
+    else
+      redirect_to :root_path
+    end
   end
 
   def create
@@ -56,30 +64,30 @@ class TodosController < ApplicationController
     todos_delete = []
     todos_delegate = []
 
-  if todos.present? and todos.length >= 2 then
-    todos_slice = todos.each_slice(todos.length/2).to_a if todos.length % 2 == 0
-    todos_slice = todos.each_slice(todos.length/2+1).to_a if todos.length % 2 == 1
+    if todos.present? and todos.length >= 2 then
+      todos_slice = todos.each_slice(todos.length/2).to_a if todos.length % 2 == 0
+      todos_slice = todos.each_slice(todos.length/2+1).to_a if todos.length % 2 == 1
 
-    todos_urgent = todos_slice[0].sort{|a,b| a.importance <=> b.importance}
-    todos_noturgent = todos_slice[1].sort{|a,b| a.importance <=> b.importance}
+      todos_urgent = todos_slice[0].sort{|a,b| a.importance <=> b.importance}
+      todos_noturgent = todos_slice[1].sort{|a,b| a.importance <=> b.importance}
 
-    todos_slice_urg = todos_urgent.each_slice(todos_urgent.length/2).to_a if todos_urgent.length % 2 == 0
-    todos_slice_urg = todos_urgent.each_slice(todos_urgent.length/2+1).to_a if todos_urgent.length % 2 == 1
-    todos_important = todos_slice_urg[0] if todos_slice_urg[0].present?
-    todos_delegate  = todos_slice_urg[1] if todos_slice_urg[1].present?
+      todos_slice_urg = todos_urgent.each_slice(todos_urgent.length/2).to_a if todos_urgent.length % 2 == 0
+      todos_slice_urg = todos_urgent.each_slice(todos_urgent.length/2+1).to_a if todos_urgent.length % 2 == 1
+      todos_important = todos_slice_urg[0] if todos_slice_urg[0].present?
+      todos_delegate  = todos_slice_urg[1] if todos_slice_urg[1].present?
 
-    todos_slice_noturg = todos_noturgent.each_slice(todos_noturgent.length/2).to_a if todos_noturgent.length % 2 == 0
-    todos_slice_noturg = todos_noturgent.each_slice(todos_noturgent.length/2+1).to_a if todos_noturgent.length % 2 == 1
-    todos_decide = todos_slice_noturg[0] if todos_slice_noturg[0].present?
-    todos_delete = todos_slice_noturg[1] if todos_slice_noturg[1].present?
+      todos_slice_noturg = todos_noturgent.each_slice(todos_noturgent.length/2).to_a if todos_noturgent.length % 2 == 0
+      todos_slice_noturg = todos_noturgent.each_slice(todos_noturgent.length/2+1).to_a if todos_noturgent.length % 2 == 1
+      todos_decide = todos_slice_noturg[0] if todos_slice_noturg[0].present?
+      todos_delete = todos_slice_noturg[1] if todos_slice_noturg[1].present?
 
-    todo_list = todos_important + todos_decide + todos_delegate + todos_delete
+      todo_list = todos_important + todos_decide + todos_delegate + todos_delete
 
-    todo_list.each_with_index do |todo, i|
-    Todo.update(todo.id, {:todo_index => i + 1})
-  end
+      todo_list.each_with_index do |todo, i|
+        Todo.update(todo.id, {:todo_index => i + 1})
+      end
 
-  end
+    end
 
   redirect_to :controller => 'users', :action => 'index', :id => current_user.id
   end
@@ -89,4 +97,7 @@ class TodosController < ApplicationController
     params.permit(:title, :dead_date, :dead_time, :detail)
   end
 
+  def redirect_to_default
+    redirect_to root_path
+  end
 end

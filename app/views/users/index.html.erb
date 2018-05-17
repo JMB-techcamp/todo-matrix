@@ -12,6 +12,7 @@
         <th></th>
         <th>タスク</th>
         <th>期限</th>
+        <th></th>
       </tr>
     </thead>
     <tbody id="sortable">
@@ -22,6 +23,7 @@
           <td class="number"><%= i %></td>
           <td class="title"><a href=<%="/todos/#{todo.id}"%>><%= todo.title %></a></td>
           <td class="date"><%= todo.dead_line.strftime("%Y/%m/%d %H:%M") %></td>
+          <td class="check"><%= link_to "/todos/#{todo.id}?flag=1", method: :delete do %><i class="far fa-check-circle fa-lg"></i><% end %></td>
         </tr>
       <% end %>
     </tbody>
@@ -37,7 +39,7 @@
 $(document).on('turbolinks:load',function() {
 $("#sortable").sortable({
      cursor: 'move',
-     start: function(event, ui) {ui.item.css({'background-color':'rgba(255,0,0,0.1)', 'font-size':'30px'});},
+     start: function(event, ui) {ui.item.css({'background-color':'rgba(255,0,0,0.1)'});},
      stop: function(event, ui) {
        ui.item.css("background-color", "rgba(255,0,0,0.1)");
        jQuery.post('<%=reorder_todos_path%>', $(this).sortable('serialize'), null, 'text');

@@ -39,10 +39,25 @@ td.number{
     color:white;
     font-size: 50px;
     text-shadow: 1px -1px 0 rgba(0,0,0,1);
+    box-shadow: 5px 5px 10px -5px black;
 }
 
 td.title{
-    border-right: dotted 5px rgba(44, 62, 80,1.0);
+    /*border-right: dotted 5px rgba(44, 62, 80,1.0);*/
+    box-shadow: 5px 5px 10px -5px black;
+}
+
+td.date{
+    box-shadow: 5px 5px 10px -5px black;
+}
+
+td.check{
+    background: rgba(44, 62, 80, 0.1);
+    /*color:green;*/
+}
+td.check i{
+    /*background: rgba(44, 62, 80, 0.1);*/
+    color:green;
 }
 
 td a{

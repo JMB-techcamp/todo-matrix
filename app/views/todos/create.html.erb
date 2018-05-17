@@ -17,6 +17,7 @@
       </tr>
     </thead>
     <tbody id="sortable">
+      <% i = 1 %>
       <%  todolist.each do |todo| %>
         <% if todo.id == @new_todo_id %>
           <tr id="row_<%= todo.id %>" >
@@ -27,10 +28,11 @@
           </tr>
         <% else %>
           <tr id="row_<%= todo.id %>">
-            <td class="number" style="background-color: #3498db"><%= todo.importance-1 %>位</td>
+            <td class="number" style="background-color: #3498db"><%= i %>位</td>
             <td class="title"><%= todo.title %></td>
             <td class="date"><%= todo.dead_line.strftime("%Y/%m/%d %H:%M") %></td>
           </tr>
+        <% i += 1 %>
         <% end %>
       <% end %>
     </tbody>

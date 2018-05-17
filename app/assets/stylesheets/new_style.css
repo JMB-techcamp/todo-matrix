@@ -17,7 +17,7 @@
   border-radius: 6px;
   color: rgba(210, 218, 226, 1.0);
   text-shadow: 1px -1px 0 rgba(0,0,0,1);
-  box-shadow: 0px 0px 30px -5px white inset;
+  /*box-shadow: 0px 0px 30px -5px white inset;*/
 }
 
 .submit-icon{

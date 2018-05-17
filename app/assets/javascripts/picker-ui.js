@@ -1,10 +1,11 @@
 $(document).on('turbolinks:load', function(){
-$("#date_box").pickadate({
+$(".date").pickadate({
     format: 'yyyy/mm/dd'
 });
 
-$("#time_box").pickatime({
-    format: 'H:i'
+$(".time").pickatime({
+    format: 'H:i',
+    interval: 60
 });
 
 });

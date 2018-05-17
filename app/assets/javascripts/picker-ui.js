@@ -1,9 +1,9 @@
 $(document).on('turbolinks:load', function(){
-$(".date").pickadate({
+$(".datepick").pickadate({
     format: 'yyyy/mm/dd'
 });
 
-$(".time").pickatime({
+$(".timepick").pickatime({
     format: 'H:i',
     interval: 60
 });

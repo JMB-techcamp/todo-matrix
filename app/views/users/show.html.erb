@@ -10,7 +10,7 @@
 <div class="todo-mat">
   <div class="contents-row">
     <div class="contents-left" id="important">
-      <div class="contents-head"><h1>緊急 ＆ 重要</h1></div>
+      <div class="contents-head"><h1>最優先</h1></div>
       <div class="contents-list">
       <% if @todos_important.present? then%>
         <%  @todos_important.each do |todo| %>
@@ -23,7 +23,7 @@
     </div>
     </div>
     <div class="contents-right" id="decide">
-      <div class="contents-head"><h1>重要</h1></div>
+      <div class="contents-head"><h1>なるべくやる</h1></div>
       <div class="contents-list">
       <% if @todos_decide.present? then%>
         <%  @todos_decide.each do |todo| %>
@@ -39,7 +39,7 @@
   <!-- <hr> -->
   <div class="contents-row">
     <div class="contents-left" id="delegate">
-      <div class="contents-head"><h1>緊急</h1></div>
+      <div class="contents-head"><h1>期限が近い</h1></div>
       <div class="contents-list">
       <% if @todos_delegate.present? then%>
         <%  @todos_delegate.each do |todo| %>
@@ -53,7 +53,7 @@
     </div>
     </div>
     <div class="contents-right" id="delete">
-      <div class="contents-head"><h1></h1></div>
+      <div class="contents-head"><h1>後回し</h1></div>
       <div class="contents-list">
       <% if @todos_delete.present? then%>
         <%  @todos_delete.each do |todo| %>

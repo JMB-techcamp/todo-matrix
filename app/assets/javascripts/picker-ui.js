@@ -4,7 +4,7 @@ $("#date_box").pickadate({
 });
 
 $("#time_box").pickatime({
-    format: 'h:i'
+    format: 'H:i'
 });
 
 });

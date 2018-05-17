@@ -8,6 +8,7 @@
   <table>
     <thead>
       <tr>
+        <th>重要度</th>
         <th>タスク</th>
         <th>期限</th>
       </tr>
@@ -16,12 +17,14 @@
       <%  todolist.each do |todo| %>
         <% if todo.id == @todo.id %>
           <tr id="row_<%= todo.id %>" >
+            <td class="number"><%= todo.importance %>位</td>
             <td class="newtodo title"><%= todo.title %></td>
             <td class="newtodo date"><%= todo.dead_line.strftime("%Y/%m/%d %H:%M") %></td>
             <!-- <td class="newicon"><i class="fas fa-arrows-alt-v fa-2x"></i></td> -->
           </tr>
         <% else %>
           <tr id="row_<%= todo.id %>">
+            <td class="number"><%= todo.importance %>位</td>
             <td class="title"><%= todo.title %></td>
             <td class="date"><%= todo.dead_line.strftime("%Y/%m/%d %H:%M") %></td>
           </tr>

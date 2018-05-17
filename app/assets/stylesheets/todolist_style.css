@@ -21,7 +21,7 @@ th {
  }
 
 tbody tr{
-    background-color: rgba(44, 62, 80, 0.1);
+    /*background-color: rgba(44, 62, 80, 0.1);*/
 }
 
 tbody td {
@@ -31,6 +31,7 @@ tbody td {
     /*background-position:left top;*/
     padding: 30px;
     text-align:center;
+    background-color: rgba(44, 62, 80, 0.1);
  }
 
 td.number{
@@ -52,12 +53,17 @@ td.date{
 }
 
 td.check{
-    background: rgba(44, 62, 80, 0.1);
+    background: transparent;
     /*color:green;*/
 }
 td.check i{
     /*background: rgba(44, 62, 80, 0.1);*/
     color:green;
+}
+
+td.check i:hover{
+    transition:0.3s;
+    color:white;
 }
 
 td a{

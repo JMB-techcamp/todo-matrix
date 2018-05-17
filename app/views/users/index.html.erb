@@ -23,7 +23,7 @@
           <td class="number"><%= i %></td>
           <td class="title"><a href=<%="/todos/#{todo.id}"%>><%= todo.title %></a></td>
           <td class="date"><%= todo.dead_line.strftime("%Y/%m/%d %H:%M") %></td>
-          <td class="check"><%= link_to "/todos/#{todo.id}?flag=1", method: :delete do %><i class="far fa-check-circle fa-lg"></i><% end %></td>
+          <td class="check"><%= link_to "/todos/#{todo.id}?flag=1", method: :delete do %><i class="far fa-check-circle fa-2x"></i><% end %></td>
         </tr>
       <% end %>
     </tbody>
